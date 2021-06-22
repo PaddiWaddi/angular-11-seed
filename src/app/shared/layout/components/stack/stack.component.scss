@@ -1,0 +1,21 @@
+:host {
+  display: block;
+}
+
+:host.space-small {
+  ::ng-deep > *:not(:first-child) {
+    margin-top: 8px;
+  }
+}
+
+:host.space-medium {
+  ::ng-deep > *:not(:first-child) {
+    margin-top: 16px;
+  }
+}
+
+:host.space-large {
+  ::ng-deep > *:not(:first-child) {
+    margin-top: 20px;
+  }
+}

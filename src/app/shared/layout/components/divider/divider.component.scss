@@ -1,0 +1,13 @@
+:host {
+  display: block;
+}
+
+.layout-divider {
+  border-top: solid 1px #ccc;
+
+  &::before {
+    content: "";
+    display: table;
+    margin-bottom: -1px;
+  }
+}

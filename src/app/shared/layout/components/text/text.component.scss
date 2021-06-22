@@ -1,0 +1,19 @@
+:host {
+  display: block;
+}
+.layout-text {
+  &__container {
+    display: block;
+
+    &::before {
+      content: "";
+      margin-bottom: -0.1875em;
+      display: table;
+    }
+    &::after {
+      content: "";
+      margin-top: -0.25em;
+      display: table;
+    }
+  }
+}
