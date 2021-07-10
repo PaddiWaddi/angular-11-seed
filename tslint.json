@@ -1,0 +1,76 @@
+{
+  "defaultSeverity": "error",
+  "extends": ["tslint:recommended", "tslint-consistent-codestyle", "tslint-config-prettier"],
+  "jsRules": {},
+  "rules": {
+    "array-type": [true, "array"],
+    // To be able to add more banned types, we have to include the rule options from tslint:recommended
+    "ban-types": {
+      "options": [
+        // Rules from tslint:recommended:
+        ["Object", "Avoid using the `Object` type. Did you mean `object`?"],
+        ["Function", "Avoid using the `Function` type. Prefer a specific function type, like `() => void`."],
+        ["Boolean", "Avoid using the `Boolean` type. Did you mean `boolean`?"],
+        ["Number", "Avoid using the `Number` type. Did you mean `number`?"],
+        ["String", "Avoid using the `String` type. Did you mean `string`?"],
+        ["Symbol", "Avoid using the `Symbol` type. Did you mean `symbol`?"],
+
+        // Custom rules below:
+        [
+          "TouchEvent",
+          "Safari and Firefox do not support the `TouchEvent` type. Use `ITouchEvent` from our models instead."
+        ]
+      ]
+    },
+    "comment-format": {
+      "options": ["check-space", "allow-trailing-lowercase"]
+    },
+    "early-exit": {
+      "severity": "warning"
+    },
+    "interface-name": false,
+    "jsdoc-format": [true, "check-multiline-start"],
+    "max-classes-per-file": false,
+    "max-line-length": false,
+    "member-ordering": false,
+    "no-any": true,
+    "no-empty": {
+      "options": "allow-empty-catch"
+    },
+    "no-floating-promises": {
+      "severity": "warning"
+    },
+    "no-for-in": true,
+    "no-parameter-properties": false,
+    "no-redundant-jsdoc": true,
+    "no-shadowed-variable": {
+      "severity": "warning"
+    },
+    "no-switch-case-fall-through": true,
+    "no-unused": [true, "ignore-parameters"],
+    "no-unused-expression": true,
+    "no-unused-variable": false,
+    "object-literal-key-quotes": { "options": "as-needed" },
+    "object-literal-sort-keys": false,
+    "typedef": [true, "call-signature", "parameter", "property-declarations", "member-variable-declaration"],
+    "variable-name": {
+      "options": ["ban-keywords", "check-format", "require-const-for-all-caps", "allow-leading-underscore"]
+    }
+    // Following rule can be activated, when `require-jsdoc` rule is implemented in https://github.com/buzinas/tslint-eslint-rules
+    // "valid-jsdoc": [
+    //   true,
+    //   {
+    //     "requireReturn": false,
+    //     "requireReturnType": false,
+    //     "prefer": {
+    //       "return": "returns"
+    //     },
+    //     "requireParamType": false
+    //   }
+    // ]
+  },
+  "rulesDirectory": [
+    // Following rules can be included, when `require-jsdoc` rule is implemented in https://github.com/buzinas/tslint-eslint-rules
+    // "node_modules/tslint-eslint-rules/dist/rules"
+  ]
+}
