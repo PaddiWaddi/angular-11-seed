@@ -1,0 +1,68 @@
+// Primary Colors
+$PrimaryColor1: #e7effd;
+$PrimaryColor2: #c3dcfd;
+$PrimaryColor3: #9fc4fc;
+$PrimaryColor4: #73a6f3;
+$PrimaryColor5: #4b8ae9;
+$PrimaryColor6: #2f70da;
+$PrimaryColor7: #205ec3;
+$PrimaryColor8: #174fa9;
+$PrimaryColor9: #134293;
+$PrimaryColor10: #113b80;
+
+$PrimaryColorDisabled: $PrimaryColor4;
+$PrimaryColorDefault: $PrimaryColor6;
+$PrimaryColorHover: $PrimaryColor5;
+$PrimaryColorActive: $PrimaryColor7;
+
+// Gray-Colors
+$Gray1: #f2f3f5;
+$Gray2: #e7ebee;
+$Gray3: #d4dae1;
+$Gray4: #b9bec6;
+$Gray5: #828a96;
+$Gray6: #676f7b;
+$Gray7: #556170;
+$Gray8: #404b5a;
+$Gray9: #2d3a4c;
+$Gray10: #151d27;
+
+// Signal Colors
+$SignalColorInfo1: #e7effd;
+$SignalColorInfo2: #9fc4fc;
+$SignalColorInfo3: #2f70da;
+$SignalColorInfo4: #205ec3;
+$SignalColorInfo5: #174fa9;
+
+$SignalColorSuccess1: rgb(237, 245, 207);
+$SignalColorSuccess2: rgb(218, 236, 162);
+$SignalColorSuccess3: rgb(156, 205, 1);
+$SignalColorSuccess4: rgb(128, 167, 0);
+$SignalColorSuccess5: rgb(114, 150, 0);
+
+$SignalColorWarning1: rgb(254, 235, 210);
+$SignalColorWarning2: rgb(254, 195, 142);
+$SignalColorWarning3: rgb(253, 149, 8);
+$SignalColorWarning4: rgb(208, 122, 5);
+$SignalColorWarning5: rgb(185, 109, 6);
+
+$SignalColorError1: rgb(255, 233, 235);
+$SignalColorError2: rgb(255, 192, 195);
+$SignalColorError3: rgb(255, 30, 38);
+$SignalColorError4: rgb(186, 21, 28);
+$SignalColorError5: rgb(116, 13, 18);
+
+// Other
+$White: #fff;
+$BackgroundColor: #f6f9ff;
+$BackgroundColor2: #fbfcff;
+$BackdropColor: rgba(#2d3a4c, 0.5);
+
+// Font-Colors
+$FontColor1: $Gray4;
+$FontColor2: $Gray5;
+$FontColor3: $Gray7;
+$FontColor4: $Gray9;
+
+$FontColorDisabled: $FontColor1;
+$FontColorInverted: $White;

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Size } from './shared/layout/models/sizes';
+import { Size } from './shared/layout/models';
 
 @Component({
   selector: 'app-root',

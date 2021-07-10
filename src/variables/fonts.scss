@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600;700&display=swap');
+
+$FontAscenderModifier: var(--font-ascender-modifier);
+$FontDescenderModifier: var(--font-descender-modifier);
+
+$FontFamilyDefault: var(--font-family-default);
+
+:root {
+  --font-ascender-modifier: -0.2469em;
+  --font-descender-modifier: -0.2819em;
+
+  --font-family-default: 'Signika', sans-serif;
+}

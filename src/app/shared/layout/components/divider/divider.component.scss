@@ -1,13 +1,15 @@
+@import '../../../../../variables';
+
 :host {
   display: block;
 }
 
 .layout-divider {
-  border-top: solid 1px #ccc;
+  border-top: solid $SizeBorderRegular $Gray5;
 
   &::before {
-    content: "";
+    content: '';
     display: table;
-    margin-bottom: -1px;
+    margin-bottom: -$SizeBorderRegular;
   }
 }

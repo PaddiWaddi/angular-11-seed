@@ -1,0 +1,27 @@
+$SizeGutter: var(--size-gutter);
+$SizeXXSmall: var(--size-xxsmall);
+$SizeXSmall: var(--size-xsmall);
+$SizeSmall: var(--size-small);
+$SizeMedium: var(--size-medium);
+$SizeLarge: var(--size-large);
+$SizeXLarge: var(--size-xlarge);
+$SizeXXLarge: var(--size-xxlarge);
+
+$SizeBorderSmall: var(--size-border-small);
+$SizeBorderRegular: var(--size-border-regular);
+$SizeBorderLarger: var(--size-border-large);
+
+:root {
+  --size-gutter: 1.5rem; // 24px
+  --size-xxsmall: 0.25rem; // 4px
+  --size-xsmall: 0.5rem; // 8px
+  --size-small: 0.75rem; // 12px
+  --size-medium: 1.25rem; // 20px
+  --size-large: 2rem; // 32px
+  --size-xlarge: 3rem; // 48px
+  --size-xxlarge: 6rem; // 96px
+
+  --size-border-small: 0.0375rem; // 0.5px
+  --size-border-regular: 0.0625rem; // 1px
+  --size-border-large: 0.125rem; // 2px
+}

@@ -1,5 +1,5 @@
 import { Component, HostBinding, Input, OnInit } from '@angular/core';
-import { Size } from '../../models/sizes';
+import { Size } from '../../models/';
 
 @Component({
   selector: 'stack',
