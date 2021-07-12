@@ -290,7 +290,7 @@ module.exports = {
     'selector-type-no-unknown': [
       true,
       {
-        ignoreTypes: ['/^bev-/', '/^ykk-/', '/^app-/', '/^cdk-/', '/^ng-/', 'router-outlet'],
+        ignoreTypes: ['/^app-/', '/^app-/', '/^cdk-/', '/^ng-/', 'router-outlet'],
       },
     ],
     // At-rule
@@ -358,7 +358,7 @@ module.exports = {
     ],
     // Selector
     'selector-class-pattern': [
-      '(ykk|bev|ng|cdk)(-([a-zA-Z0-9^]+[-]?[a-zA-Z0-9^]+))?((__)([a-zA-Z0-9^]+[-]?[a-zA-Z0-9^]+))?((--)([a-zA-Z0-9^]+[-]?[a-zA-Z0-9^]+))?',
+      '(app|ng|cdk)(-([a-zA-Z0-9^]+[-]?[a-zA-Z0-9^]+))?((__)([a-zA-Z0-9^]+[-]?[a-zA-Z0-9^]+))?((--)([a-zA-Z0-9^]+[-]?[a-zA-Z0-9^]+))?',
       {
         resolveNestedSelectors: true,
       },

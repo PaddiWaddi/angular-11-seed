@@ -1,0 +1,111 @@
+@import './../../../../../variables';
+
+:host {
+  display: block;
+}
+
+.padding {
+  &Top {
+    &-xx-small {
+      padding-top: $SizeXXSmall;
+    }
+
+    &-x-small {
+      padding-top: $SizeXSmall;
+    }
+
+    &-small {
+      padding-top: $SizeSmall;
+    }
+
+    &-large {
+      padding-top: $SizeLarge;
+    }
+
+    &-x-large {
+      padding-top: $SizeXLarge;
+    }
+
+    &-xx-large {
+      padding-top: $SizeXXLarge;
+    }
+  }
+
+  &Right {
+    &-xx-small {
+      padding-right: $SizeXXSmall;
+    }
+
+    &-x-small {
+      padding-right: $SizeXSmall;
+    }
+
+    &-small {
+      padding-right: $SizeSmall;
+    }
+
+    &-large {
+      padding-right: $SizeLarge;
+    }
+
+    &-x-large {
+      padding-right: $SizeXLarge;
+    }
+
+    &-xx-large {
+      padding-right: $SizeXXLarge;
+    }
+  }
+
+  &Bottom {
+    &-xx-small {
+      padding-bottom: $SizeXXSmall;
+    }
+
+    &-x-small {
+      padding-bottom: $SizeXSmall;
+    }
+
+    &-small {
+      padding-bottom: $SizeSmall;
+    }
+
+    &-large {
+      padding-bottom: $SizeLarge;
+    }
+
+    &-x-large {
+      padding-bottom: $SizeXLarge;
+    }
+
+    &-xx-large {
+      padding-bottom: $SizeXXLarge;
+    }
+  }
+
+  &Left {
+    &-xx-small {
+      padding-left: $SizeXXSmall;
+    }
+
+    &-x-small {
+      padding-left: $SizeXSmall;
+    }
+
+    &-small {
+      padding-left: $SizeSmall;
+    }
+
+    &-large {
+      padding-left: $SizeLarge;
+    }
+
+    &-x-large {
+      padding-left: $SizeXLarge;
+    }
+
+    &-xx-large {
+      padding-left: $SizeXXLarge;
+    }
+  }
+}

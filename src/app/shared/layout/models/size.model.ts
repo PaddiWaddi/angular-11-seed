@@ -7,4 +7,5 @@ export enum Size {
   Large = 'large',
   XLarge = 'x-large',
   XXLarge = 'xx-large',
+  Gutter = 'gutter',
 }

@@ -9,5 +9,13 @@ import { Size } from './shared/layout/models';
 export class AppComponent {
   title = 'frontend-seed';
 
+  public bigArray: string[] = [];
+
   public Size = Size;
+
+  constructor() {
+    for (let i = 0; i < 10000; i++) {
+      this.bigArray.push('');
+    }
+  }
 }

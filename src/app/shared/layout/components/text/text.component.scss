@@ -3,20 +3,24 @@
 :host {
   display: block;
 }
-.layout-text {
+
+.app-text {
   &__container {
     display: block;
     font-family: $FontFamilyDefault;
 
     &::before {
       content: '';
-      margin-bottom: -0.1875em;
       display: table;
+      /* stylelint-disable-next-line unit-blacklist */
+      margin-bottom: -0.1875em;
     }
+
     &::after {
       content: '';
-      margin-top: -0.25em;
       display: table;
+        /* stylelint-disable-next-line unit-blacklist */
+      margin-top: -0.25em;
     }
   }
 }

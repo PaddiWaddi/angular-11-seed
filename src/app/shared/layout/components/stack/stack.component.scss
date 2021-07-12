@@ -3,10 +3,9 @@
 :host {
   display: block;
 }
-
-:host.space-gutter {
+:host.space-xx-small {
   ::ng-deep > *:not(:first-child) {
-    margin-top: $SizeGutter;
+    margin-top: $SizeXXSmall;
   }
 }
 
@@ -16,9 +15,9 @@
   }
 }
 
-:host.space-xx-small {
+:host.space-gutter {
   ::ng-deep > *:not(:first-child) {
-    margin-top: $SizeXXSmall;
+    margin-top: $SizeGutter;
   }
 }
 
