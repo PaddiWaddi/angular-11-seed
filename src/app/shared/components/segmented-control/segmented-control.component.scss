@@ -1,0 +1,39 @@
+@import 'variables';
+
+.ck-segmented-control {
+  padding: $BorderWidthLarge;
+  border: solid $BorderWidthStandard $Gray2;
+  border-radius: $BorderRadiusLarge;
+  outline: none;
+
+  &:focus {
+    border-color: $PrimaryColorDefault;
+  }
+
+  &__inner {
+    position: relative;
+  }
+
+  &__items {
+    position: relative;
+    display: flex;
+    justify-content: stretch;
+
+    ::ng-deep app-segment {
+      flex: 1 1 0;
+    }
+  }
+
+  &__highlight {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border-radius: $BorderRadiusStandard;
+    background-color: $Gray2;
+    transition: transform $DurationRegular $EaseRegular;
+  }
+
+  &:focus .ck-segmented-control__highlight {
+    background-color: $PrimaryColorDefault;
+  }
+}

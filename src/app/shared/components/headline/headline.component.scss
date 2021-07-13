@@ -1,0 +1,31 @@
+@import 'variables';
+
+:host {
+  display: block;
+  font-family: 'Signika', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+h1 {
+  font-size: $FontSizeExtraLarge;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: $FontSizeVeryLarge;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: $FontSizeLarge;
+  font-weight: 700;
+}

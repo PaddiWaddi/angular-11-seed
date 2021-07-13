@@ -1,0 +1,85 @@
+@import 'variables';
+
+.ck-form-field {
+  $focused: #{&}--focused;
+  $disabled: #{&}--disabled;
+  $error: #{&}--error;
+
+  margin: $SizeVeryLarge 0;
+
+  &__label {
+    margin-bottom: $SizeVerySmall;
+    padding-left: $SizeSmall;
+
+    #{$disabled} & {
+      color: $FontColorDisabled;
+    }
+
+    #{$focused} & {
+      color: $PrimaryColorDefault;
+    }
+
+    #{$error} & {
+      color: $SignalColorError4;
+    }
+  }
+
+  &__info {
+    display: flex;
+    margin-top: $SizeVerySmall;
+    margin-bottom: -$SizeLarge;
+    padding-left: $SizeSmall;
+  }
+
+  &__box {
+    display: flex;
+    box-sizing: border-box;
+    height: $SizeVeryLarge;
+    padding: 0 $SizeSmall;
+    font-size: $FontSizeRegular;
+    border: solid $BorderWidthStandard $Gray2;
+    border-radius: $BorderRadiusStandard;
+    background-color: $Gray8;
+    box-shadow: 0 0 0 0 $BackgroundColor, 0 0 0 0 $PrimaryColorDefault;
+    transition: box-shadow $DurationFast $EaseRegular;
+
+    #{$focused} & {
+      box-shadow: 0 0 0 2px $BackgroundColor, 0 0 0 4px $PrimaryColorDefault;
+    }
+
+    #{$error} & {
+      border-color: $SignalColorError4;
+    }
+
+    #{$disabled} & {
+      color: $FontColorDisabled;
+      border-color: transparent;
+      background-color: $Gray9;
+    }
+
+    &-prefix {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    &-input {
+      flex: 1 0 50%;
+      padding: $SizeVerySmall 0;
+
+      ::ng-deep [appFormInput] {
+        width: 100%;
+        height: 100%;
+        color: $FontColor3;
+
+        @include placeholder() {
+          color: $FontColor2;
+        }
+      }
+    }
+
+    &-suffix {
+      display: inline-flex;
+      align-items: center;
+    }
+  }
+}

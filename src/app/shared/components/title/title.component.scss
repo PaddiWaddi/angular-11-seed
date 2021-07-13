@@ -1,0 +1,17 @@
+@import 'variables';
+
+:host {
+  display: block;
+}
+
+.ck-title {
+  font-family: 'Signika', sans-serif;
+  font-size: 3.25rem;
+  font-weight: 600;
+  margin-block-start: 0;
+  margin-block-end: 0;
+
+  &--center {
+    text-align: center;
+  }
+}

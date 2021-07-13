@@ -1,0 +1,28 @@
+<button
+  class="ck-button"
+  [class.ck-button--style-regular]="style === 'regular'"
+  [class.ck-button--style-text]="style === 'text'"
+  [class.ck-button--color-regular]="color === 'regular'"
+  [class.ck-button--color-primary]="color === 'primary'"
+  [class.ck-button--loading]="loadingStatus === 'loading'"
+  [class.ck-button--loading-error]="loadingStatus === 'error'"
+  [class.ck-button--loading-success]="loadingStatus === 'success'"
+  [type]="type"
+  [attr.disabled]="disabled || loadingStatus === 'loading' || null"
+>
+  <div *ngIf="prefix" class="ck-button__prefix">
+    <ng-content select="fa-icon[appPrefix]"></ng-content>
+  </div>
+
+  <div class="ck-button__content">
+    <ng-content></ng-content>
+  </div>
+
+  <div *ngIf="suffix" class="ck-button__suffix">
+    <ng-content select="fa-icon[appSuffix]"></ng-content>
+  </div>
+
+  <div class="ck-button__loading">
+    <app-loading-spinner class="ck-button__loading-spinner" [color]="color"></app-loading-spinner>
+  </div>
+</button>

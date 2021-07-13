@@ -1,0 +1,13 @@
+<div class="ck-segmented-control" tabindex="0">
+  <div class="ck-segmented-control__inner">
+    <div
+      class="ck-segmented-control__highlight"
+      [style.width]="100 / segments?.length + '%'"
+      [style.transform]="'translateX(' + 100 * selectedIndex + '%)'"
+    ></div>
+
+    <div class="ck-segmented-control__items">
+      <ng-content select="app-segment"></ng-content>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+@import 'variables';
+
+:host {
+  @include ellipsis;
+
+  display: block;
+  padding: $SizeVerySmall $SizeRegular;
+  color: $FontColorDefault;
+  font-size: $FontSizeSmall;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: $BorderRadiusLarge;
+  outline: none;
+  overflow: hidden;
+  transition: color $DurationFast, box-shadow $DurationFast $EaseRegular;
+  cursor: pointer;
+}
+
+:host-context(.isSelected) {
+  color: $FontColorInverted;
+}

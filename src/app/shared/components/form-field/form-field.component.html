@@ -1,0 +1,32 @@
+<div
+  class="ck-form-field"
+  [class.ck-form-field--focused]="isFocused"
+  [class.ck-form-field--disabled]="isDisabled"
+  [class.ck-form-field--error]="errors?.length"
+>
+  <div *ngIf="label" class="ck-form-field__label">
+    <ng-content select="app-label"></ng-content>
+  </div>
+
+  <div class="ck-form-field__box">
+    <div *ngIf="prefix" class="ck-form-field__box-prefix">
+      <ng-content select="[appPrefix]"> </ng-content>
+    </div>
+    <div class="ck-form-field__box-input">
+      <ng-content select="[appFormInput]"> </ng-content>
+    </div>
+    <div *ngIf="suffix" class="ck-form-field__box-suffix">
+      <ng-content select="[appSuffix]"> </ng-content>
+    </div>
+  </div>
+
+  <div *ngIf="errors?.length || hints?.length" class="ck-form-field__info">
+    <div *ngIf="!errors?.length && hints?.length" class="ck-form-field__hints">
+      <ng-content select="app-hint"></ng-content>
+    </div>
+
+    <div *ngIf="errors?.length" class="ck-form-field__hints">
+      <ng-content select="app-error"></ng-content>
+    </div>
+  </div>
+</div>

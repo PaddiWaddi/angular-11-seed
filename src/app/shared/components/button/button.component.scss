@@ -1,0 +1,233 @@
+@import 'variables';
+
+:host {
+  display: inline-block;
+}
+
+.ck-button {
+  $styleRegular: #{&}--style-regular;
+  $styleText: #{&}--style-text;
+  $colorRegular: #{&}--color-regular;
+  $colorPrimary: #{&}--color-primary;
+
+  $loading: #{&}--loading;
+  $loadingError: #{&}--loading-error;
+
+  position: relative;
+  display: flex;
+  align-content: center;
+  padding: $SizeVerySmall $SizeSmall;
+  color: $FontColorDefault;
+  font-size: $FontSizeRegular;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  border-radius: $BorderRadiusStandard;
+  outline: none;
+  background-color: transparent;
+  box-shadow: none;
+  appearance: none;
+  overflow: hidden;
+  animation: none;
+  cursor: pointer;
+  user-select: none;
+
+  &[disabled],
+  &#{loading} {
+    cursor: default;
+    pointer-events: none;
+    user-select: text;
+  }
+
+  &#{$loadingError} {
+    animation: shakeAnimation $DurationRegular $DurationRegular linear;
+  }
+
+  /* FILLED STYLE */
+  &#{$styleRegular} {
+    transition: background-color $DurationRegular, color $DurationRegular, box-shadow $DurationFast $EaseRegular;
+
+    &#{$colorRegular} {
+      color: $FontColorDefault;
+      background-color: $Gray6;
+
+      &:not([disabled]) {
+        &:hover {
+          background-color: $Gray5;
+        }
+
+        &:active {
+          background-color: $Gray7;
+        }
+      }
+
+      &[disabled] {
+        color: $FontColorDisabled;
+        background-color: $Gray9;
+      }
+    }
+
+    &#{$colorPrimary} {
+      color: $FontColorInverted;
+      background-color: $PrimaryColor6;
+
+      &:not([disabled]) {
+        &:hover {
+          background-color: $PrimaryColor4;
+        }
+
+        &:active {
+          background-color: $PrimaryColor1;
+        }
+      }
+
+      &[disabled] {
+        color: rga($PrimaryColor6, 0.6);
+        background-color: $Gray9;
+      }
+    }
+  }
+
+  /* TEXT STYLE */
+  &#{$styleText} {
+    transition: background-color $DurationRegular, color $DurationRegular, box-shadow $DurationFast $EaseRegular;
+
+    &#{$colorRegular} {
+      color: $FontColor2;
+      background-color: transparent;
+
+      &:not([disabled]) {
+        &:hover {
+          color: $FontColorDefault;
+          background-color: $Gray8;
+        }
+
+        &:active {
+          color: $FontColorDefault;
+          background-color: $Gray6;
+        }
+      }
+
+      &[disabled] {
+        color: $FontColorDisabled;
+        background-color: transparent;
+      }
+    }
+
+    &#{$colorPrimary} {
+      color: $PrimaryColor6;
+      background-color: transparent;
+
+      &:not([disabled]) {
+        &:hover,
+        &:focus {
+          color: $PrimaryColor6;
+          background-color: $Gray8;
+        }
+
+        &:active {
+          color: $PrimaryColor4;
+          background-color: $Gray6;
+        }
+      }
+
+      &[disabled] {
+        color: $FontColorDisabled;
+        background-color: transparent;
+      }
+    }
+  }
+
+  &:focus {
+    color: $PrimaryColor6;
+    background-color: $Gray8;
+    box-shadow: 0 0 0 2px $BackgroundColor, 0 0 0 4px $PrimaryColorDefault;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -$SizeSmall;
+    right: -$SizeSmall;
+    bottom: -$SizeSmall;
+    left: -$SizeSmall;
+  }
+
+  &__prefix {
+    display: inline-flex;
+    align-items: center;
+    margin-right: $SizeVerySmall;
+    transition: opacity $DurationRegular;
+
+    #{$loading} & {
+      opacity: 0.2;
+    }
+  }
+
+  &__suffix {
+    display: inline-flex;
+    align-items: center;
+    margin-left: $SizeVerySmall;
+    transition: opacity $DurationRegular;
+
+    #{$loading} & {
+      opacity: 0.2;
+    }
+  }
+
+  &__content {
+    transform: scale(1);
+    transition: opacity $DurationRegular, transform $DurationRegular;
+
+    #{$loading} & {
+      opacity: 0.2;
+      transform: scale(0.8);
+    }
+  }
+
+  &__loading {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    transform: scale(2);
+    transition: opacity $DurationRegular, transform $DurationRegular $EaseRegular;
+    pointer-events: none;
+    user-select: none;
+
+    #{$loading} & {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+@keyframes shakeAnimation {
+  8%,
+  41% {
+    transform: translateX(-$SizeSmall);
+  }
+
+  25%,
+  58% {
+    transform: translateX($SizeSmall);
+  }
+
+  75% {
+    transform: translateX(-$SizeVerySmall);
+  }
+
+  92% {
+    transform: translateX($SizeVerySmall);
+  }
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,18 @@
+@import 'variables';
+
+:host {
+  display: block;
+  height: 100%;
+  padding-top: calc(env(safe-are-inset-top, 0) + $SizeRegular);
+  padding-bottom: calc(env(safe-are-inset-bottom, 0) + $SizeRegular);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+:host-context(.no-top) {
+  padding-top: 0;
+}
+
+:host-context(.no-bottom) {
+  padding-bottom: 0;
+}

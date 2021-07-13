@@ -1,0 +1,15 @@
+@import 'variables';
+
+:host {
+  display: block;
+  padding: 0;
+  font-size: inherit;
+  border: none;
+  background: none;
+  background-color: transparent;
+  appearance: none;
+
+  &:focus {
+    outline: none;
+  }
+}

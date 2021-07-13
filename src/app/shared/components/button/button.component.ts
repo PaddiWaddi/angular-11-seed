@@ -1,0 +1,68 @@
+import { Component, OnInit, Input, ContentChild, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { SuffixDirective } from '@shared/directives/suffix.directive';
+import { PrefixDirective } from '@shared/directives/prefix.directive';
+import * as faIcons from '@fortawesome/free-solid-svg-icons';
+
+/**
+ * Button component
+ */
+@Component({
+  selector: 'app-button',
+  templateUrl: './button.component.html',
+  styleUrls: ['./button.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class ButtonComponent {
+  /** Type of the html button type */
+  @Input()
+  public type: 'button' | 'submit' = 'button';
+
+  /** Color scheme to use */
+  @Input()
+  public color: 'regular' | 'primary' = 'regular';
+
+  /** Button style */
+  @Input()
+  public style: 'regular' | 'text' = 'regular';
+
+  /** Wether the button can be clicked */
+  @Input()
+  public disabled = false;
+
+  /** Shows a loading indicator */
+  @Input()
+  public loadingStatus: LoadingState = LoadingState.Rest;
+
+  /** Icon Suffix */
+  @ContentChild(SuffixDirective)
+  public suffix: SuffixDirective;
+
+  /** Icon prefix */
+  @ContentChild(PrefixDirective)
+  public prefix: PrefixDirective;
+
+  /** Icon reference to use in template */
+  public faIcons = faIcons;
+
+  /**
+   * Constructor
+   */
+  constructor(private cd: ChangeDetectorRef) {}
+
+  /**
+   * Set the loading status to the given value
+   * @param status Desired button status
+   */
+  public setStatus(status: LoadingState) {
+    this.loadingStatus = status;
+    this.cd.markForCheck();
+  }
+}
+
+/** Button Status type */
+export enum LoadingState {
+  Rest = 'rest',
+  Loading = 'loading',
+  Error = 'error',
+  Success = 'success',
+}

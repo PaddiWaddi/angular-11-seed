@@ -1,0 +1,11 @@
+@import 'variables';
+
+:host {
+  display: inline-block;
+}
+
+.ck-label {
+  font-size: $FontSizeSmall;
+  font-weight: 400;
+  text-transform: uppercase;
+}
