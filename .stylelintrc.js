@@ -297,7 +297,7 @@ module.exports = {
     'at-rule-no-unknown': [
       true,
       {
-        ignoreAtRules: ['include', 'mixin', 'each', 'if', 'else', 'at', 'at-root'],
+        ignoreAtRules: ['include', 'mixin', 'each', 'if', 'else', 'at', 'at-root', 'use'],
       },
     ],
     // General / Sheet
