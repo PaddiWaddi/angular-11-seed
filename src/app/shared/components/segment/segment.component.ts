@@ -5,7 +5,6 @@ import {
   EventEmitter,
   HostBinding,
   HostListener,
-  OnChanges,
   ChangeDetectionStrategy,
 } from '@angular/core';
 
@@ -21,15 +20,18 @@ import {
 export class SegmentComponent<T> {
   /** Value of the segment. Used as a return value for selection */
   @Input()
-  public value: T;
+  public value?: T;
 
   /** Raises when the selection changes */
   @Output()
-  public selectionChanged = new EventEmitter<{ selection: boolean; value: T }>();
+  public selectionChanged: EventEmitter<{ selection: boolean; value?: T }> = new EventEmitter<{
+    selection: boolean;
+    value?: T;
+  }>();
 
   /** Wether this segment is selected */
   @HostBinding('class.isSelected')
-  public selected: boolean;
+  public selected: boolean = false;
 
   /** Set is selected an raise event */
   public set isSelected(value: boolean) {
@@ -46,13 +48,13 @@ export class SegmentComponent<T> {
 
   /** Toggle selection on click */
   @HostListener('click')
-  public toggle() {
+  public toggle(): void {
     this.isSelected = !this.isSelected;
   }
 
   /** Toggle selection on click */
   @HostListener('keydown.enter')
-  private select() {
+  private select(): void {
     this.isSelected = true;
   }
 
@@ -61,7 +63,7 @@ export class SegmentComponent<T> {
    * @param value value to set isSelected to
    * @param emitChange wether or not to emit a change event. Defaults to false
    */
-  public setSelected(value: boolean, emitChange?: boolean) {
+  public setSelected(value: boolean, emitChange?: boolean): void {
     if (emitChange) {
       this.isSelected = value;
     } else {

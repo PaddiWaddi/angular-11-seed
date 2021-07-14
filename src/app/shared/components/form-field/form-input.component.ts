@@ -110,14 +110,16 @@ export class FormInputComponent extends UnsubscribeDirective implements OnChange
    * Initializes the input after view initializing
    */
   public ngAfterViewInit(): void {
-    if (this.ngControl) {
-      // Every value change is emitted
-      this.ngControl.valueChanges.pipe(takeUntil(this.ngUnsubscribe)).subscribe(() => {
-        this.stateChanges.next(INPUT_STATE_CHANGE.valueChange);
-      });
-
-      this.stateChanges.next(INPUT_STATE_CHANGE.init);
+    if (!this.ngControl || !this.ngControl.valueChanges) {
+      return;
     }
+
+    // Every value change is emitted
+    this.ngControl.valueChanges.pipe(takeUntil(this.ngUnsubscribe)).subscribe(() => {
+      this.stateChanges.next(INPUT_STATE_CHANGE.valueChange);
+    });
+
+    this.stateChanges.next(INPUT_STATE_CHANGE.init);
   }
 
   /**

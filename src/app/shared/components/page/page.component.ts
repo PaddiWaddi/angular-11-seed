@@ -15,10 +15,10 @@ export class PageComponent {
   /** Content slot for header */
   @ContentChild(PageHeaderDirective)
   @HostBinding('class.no-top')
-  public header: PageHeaderDirective;
+  public header?: PageHeaderDirective;
 
   /** Content for footer */
   @ContentChild(PageHeaderDirective)
   @HostBinding('class.no-bottom')
-  public footer: PageFooterDirective;
+  public footer?: PageFooterDirective;
 }

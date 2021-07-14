@@ -1,7 +1,7 @@
-import { Component, OnInit, Input, ContentChild, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Component, Input, ContentChild, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { SuffixDirective } from '@shared/directives/suffix.directive';
 import { PrefixDirective } from '@shared/directives/prefix.directive';
-import * as faIcons from '@fortawesome/free-solid-svg-icons';
+import { faIcons, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 /**
  * Button component
@@ -27,7 +27,7 @@ export class ButtonComponent {
 
   /** Wether the button can be clicked */
   @Input()
-  public disabled = false;
+  public disabled: boolean = false;
 
   /** Shows a loading indicator */
   @Input()
@@ -35,14 +35,14 @@ export class ButtonComponent {
 
   /** Icon Suffix */
   @ContentChild(SuffixDirective)
-  public suffix: SuffixDirective;
+  public suffix?: SuffixDirective;
 
   /** Icon prefix */
   @ContentChild(PrefixDirective)
-  public prefix: PrefixDirective;
+  public prefix?: PrefixDirective;
 
   /** Icon reference to use in template */
-  public faIcons = faIcons;
+  public faIcons: IconDefinition = faIcons;
 
   /**
    * Constructor
@@ -53,7 +53,7 @@ export class ButtonComponent {
    * Set the loading status to the given value
    * @param status Desired button status
    */
-  public setStatus(status: LoadingState) {
+  public setStatus(status: LoadingState): void {
     this.loadingStatus = status;
     this.cd.markForCheck();
   }

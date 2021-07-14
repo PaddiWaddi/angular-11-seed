@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 /**
  * Label element
@@ -12,5 +12,5 @@ import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core
 export class LabelComponent {
   /** For html attribute to attach this to input elements */
   @Input()
-  public for: string;
+  public for?: string;
 }

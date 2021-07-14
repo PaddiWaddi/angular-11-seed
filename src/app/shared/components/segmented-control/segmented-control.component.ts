@@ -1,13 +1,11 @@
 import {
   Component,
-  OnInit,
   Output,
   EventEmitter,
   Input,
   ContentChildren,
   QueryList,
   AfterContentInit,
-  HostBinding,
   HostListener,
   SimpleChanges,
   OnChanges,
@@ -15,7 +13,7 @@ import {
 } from '@angular/core';
 import { SegmentComponent } from '../segment/segment.component';
 import { takeUntil } from 'rxjs/operators';
-import { UnsubscribeDirective } from '@shared/helpers/unsubscribe.directive';
+import { UnsubscribeDirective } from '../../helpers/unsubscribe.directive';
 
 /**
  * Control that works like a radio group with options where only one can be chosen.
@@ -29,15 +27,18 @@ import { UnsubscribeDirective } from '@shared/helpers/unsubscribe.directive';
 export class SegmentedControlComponent<T> extends UnsubscribeDirective implements AfterContentInit, OnChanges {
   /** Raises when the selected control changes */
   @Output()
-  public selectionChanged = new EventEmitter<{ value: T; index: number }>();
+  public selectionChanged: EventEmitter<{ value?: T; index: number }> = new EventEmitter<{
+    value?: T;
+    index: number;
+  }>();
 
   /** Value of the selected segment */
   @Input()
-  public selectedIndex: number;
+  public selectedIndex: number = 0;
 
   /** Available segments */
   @ContentChildren(SegmentComponent, { descendants: true })
-  public segments: QueryList<SegmentComponent<T>>;
+  public segments: QueryList<SegmentComponent<T>> = new QueryList<SegmentComponent<T>>();
 
   /**
    * Initiate subscriptions to child state changes
@@ -81,7 +82,7 @@ export class SegmentedControlComponent<T> extends UnsubscribeDirective implement
    * Create subscriptions for each segment
    */
   private wireSubscriptions(segments: SegmentComponent<T>[]) {
-    let selected;
+    let selected: number = 0;
 
     segments.forEach((segment, index) => {
       const s = segment.selectionChanged
@@ -102,7 +103,7 @@ export class SegmentedControlComponent<T> extends UnsubscribeDirective implement
         segment.setSelected(true);
       }
       if (this.selectedIndex === undefined) {
-        selected = segment.isSelected ? index : undefined;
+        selected = segment.isSelected ? index : selected;
       }
     });
 

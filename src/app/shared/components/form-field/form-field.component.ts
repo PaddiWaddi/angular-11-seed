@@ -38,27 +38,27 @@ import { HintComponent } from '../hint/hint.component';
 export class FormFieldComponent extends UnsubscribeDirective implements OnInit, AfterContentInit {
   /** Prefix to show or hide html */
   @ContentChild(PrefixDirective)
-  public prefix: PrefixDirective;
+  public prefix?: PrefixDirective;
 
   /** Prefix to show or hide html */
   @ContentChild(SuffixDirective)
-  public suffix: SuffixDirective;
+  public suffix?: SuffixDirective;
 
   /** Input element inside form field component */
   @ContentChild(FormInputComponent, { static: true })
-  public input: FormInputComponent;
+  public input?: FormInputComponent;
 
   /** Label element to show or hide html */
   @ContentChild(LabelComponent, { static: true })
-  public label: LabelComponent;
+  public label?: LabelComponent;
 
   /** Error elements to show or hide html */
   @ContentChildren(ErrorComponent, { descendants: true })
-  public errors: QueryList<ErrorComponent>;
+  public errors: QueryList<ErrorComponent> = new QueryList<ErrorComponent>();
 
   /** Hint elements to show or hide html */
   @ContentChildren(HintComponent, { descendants: true })
-  public hints: QueryList<HintComponent>;
+  public hints: QueryList<HintComponent> = new QueryList<HintComponent>();
 
   /** True if input is disabled */
   public isDisabled = false;
@@ -93,7 +93,7 @@ export class FormFieldComponent extends UnsubscribeDirective implements OnInit, 
       this.input.stateChanges
         .pipe(
           // `<string>` is needed to remove deprecated warning. Related issue: https://github.com/ReactiveX/rxjs/issues/4772
-          startWith(null as string),
+          startWith(null as unknown as string),
           takeUntil(this.ngUnsubscribe)
         )
         .subscribe((change) => {
@@ -112,16 +112,17 @@ export class FormFieldComponent extends UnsubscribeDirective implements OnInit, 
    * Updates all variables
    */
   private updateInputStates(): void {
-    // set animation after activation
-    if (this.input) {
-      this.placeholder = this.input.placeholder;
-      this.isDisabled = this.input.disabled;
-      this.isFocused = this.input.focused;
-
-      if (this.label) {
-        this.label.for = this.input.id;
-      }
-      this.changes.markForCheck();
+    if (!this.input) {
+      return;
     }
+
+    this.placeholder = this.input.placeholder;
+    this.isDisabled = this.input.disabled;
+    this.isFocused = this.input.focused;
+
+    if (this.label) {
+      this.label.for = this.input.id;
+    }
+    this.changes.markForCheck();
   }
 }
