@@ -1,5 +1,7 @@
 
 const colors = require('tailwindcss/colors')
+const plugin = require('tailwindcss/plugin')
+
 
 module.exports = {
   prefix: '',
@@ -37,10 +39,24 @@ module.exports = {
       xxl: '6rem',
     },
 
-
+    extend: {
+      animation: {
+        'shake-error': 'shake-error 0.3s 0.3s linear',
+      },
+      keyframes: {
+        'shake-error': {
+          '8%, 41%': { transform: 'translateX(-0.75rem)' },
+          '25%, 58%': { transform: 'translateX(0.75rem)' },
+          '75%': { transform: 'translateX(-0.5rem)' },
+          '92%': { transform: 'translateX(0.5rem)' },
+          '0%, 100%': { transform: 'translateX(0)' }
+        }
+      }
+    }
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+  ]
 };

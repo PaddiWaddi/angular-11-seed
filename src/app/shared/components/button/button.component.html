@@ -1,28 +1,27 @@
-<button
-  class="ck-button"
-  [class.ck-button--style-regular]="style === 'regular'"
-  [class.ck-button--style-text]="style === 'text'"
-  [class.ck-button--color-regular]="color === 'regular'"
-  [class.ck-button--color-primary]="color === 'primary'"
-  [class.ck-button--loading]="loadingStatus === 'loading'"
-  [class.ck-button--loading-error]="loadingStatus === 'error'"
-  [class.ck-button--loading-success]="loadingStatus === 'success'"
-  [type]="type"
+<div
+  class="app-button"
+  [class.app-button--style-regular]="style === 'regular'"
+  [class.app-button--style-text]="style === 'text'"
+  [class.app-button--color-regular]="color === 'regular'"
+  [class.app-button--color-primary]="color === 'primary'"
+  [class.app-button--loading]="loadingStatus === 'loading'"
+  [class.app-button--loading-error]="loadingStatus === 'error'"
+  [class.app-button--loading-success]="loadingStatus === 'success'"
   [attr.disabled]="disabled || loadingStatus === 'loading' || null"
 >
-  <div *ngIf="prefix" class="ck-button__prefix">
+  <div *ngIf="prefix" class="app-button__prefix">
     <ng-content select="fa-icon[appPrefix]"></ng-content>
   </div>
 
-  <div class="ck-button__content">
+  <div class="app-button__content">
     <ng-content></ng-content>
   </div>
 
-  <div *ngIf="suffix" class="ck-button__suffix">
+  <div *ngIf="suffix" class="app-button__suffix">
     <ng-content select="fa-icon[appSuffix]"></ng-content>
   </div>
 
-  <div class="ck-button__loading">
-    <app-loading-spinner class="ck-button__loading-spinner" [color]="color"></app-loading-spinner>
+  <div class="app-button__loading">
+    <app-loading-spinner class="app-button__loading-spinner" [color]="color"></app-loading-spinner>
   </div>
-</button>
+</div>

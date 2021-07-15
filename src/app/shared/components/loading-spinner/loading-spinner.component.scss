@@ -1,13 +1,13 @@
 @import 'variables';
 
 // scaling... any units
-$width: $SizeRegular;
+$width: $SizeMedium;
 
 :host {
   display: block;
 }
 
-.ck-loader {
+.app-loader {
   position: relative;
   width: $width;
   margin: 0 auto;
@@ -25,7 +25,7 @@ $width: $SizeRegular;
     stroke: $Gray10;
 
     &--primary {
-      stroke: $PrimaryColorDefault;
+      stroke: $Gray1;
     }
 
     &--regular {

@@ -1,0 +1,17 @@
+<div class="space-y-gutter">
+  <div class="space-x-gutter">
+    <button app-button>
+      <fa-icon appPrefix [icon]="icons.faAd"></fa-icon> Test ? <fa-icon appSuffix [icon]="icons.faAd"></fa-icon>
+    </button>
+    <button app-button [loadingStatus]="loadingState" (click)="buttonClick()">Loading</button>
+    <button app-button [disabled]="true">disabled</button>
+  </div>
+
+  <div class="space-x-gutter">
+    <button app-button [style]="'text'">
+      <fa-icon appPrefix [icon]="icons.faAd"></fa-icon> Test ? <fa-icon appSuffix [icon]="icons.faAd"></fa-icon>
+    </button>
+    <button app-button [style]="'text'" [loadingStatus]="loadingState" (click)="buttonClick()">Loading</button>
+    <button app-button [style]="'text'" [disabled]="true">disabled</button>
+  </div>
+</div>

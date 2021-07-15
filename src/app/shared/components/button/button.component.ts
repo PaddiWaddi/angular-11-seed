@@ -1,4 +1,4 @@
-import { Component, Input, ContentChild, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Component, Input, ContentChild, ChangeDetectionStrategy, ChangeDetectorRef, HostBinding } from '@angular/core';
 import { SuffixDirective } from '@shared/directives/suffix.directive';
 import { PrefixDirective } from '@shared/directives/prefix.directive';
 import { faIcons, IconDefinition } from '@fortawesome/free-solid-svg-icons';
@@ -7,16 +7,12 @@ import { faIcons, IconDefinition } from '@fortawesome/free-solid-svg-icons';
  * Button component
  */
 @Component({
-  selector: 'app-button',
+  selector: 'button[app-button],a[app-button]',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ButtonComponent {
-  /** Type of the html button type */
-  @Input()
-  public type: 'button' | 'submit' = 'button';
-
   /** Color scheme to use */
   @Input()
   public color: 'regular' | 'primary' = 'regular';
@@ -26,6 +22,7 @@ export class ButtonComponent {
   public style: 'regular' | 'text' = 'regular';
 
   /** Wether the button can be clicked */
+  @HostBinding('class.pointer-events-none')
   @Input()
   public disabled: boolean = false;
 
