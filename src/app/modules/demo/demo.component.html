@@ -1,17 +1,47 @@
-<div class="space-y-gutter">
-  <div class="space-x-gutter">
-    <button app-button>
-      <fa-icon appPrefix [icon]="icons.faAd"></fa-icon> Test ? <fa-icon appSuffix [icon]="icons.faAd"></fa-icon>
-    </button>
-    <button app-button [loadingStatus]="loadingState" (click)="buttonClick()">Loading</button>
-    <button app-button [disabled]="true">disabled</button>
+<div class="space-y-xl">
+  <div class="space-y-gutter">
+    <div class="space-x-gutter">
+      <button app-button>
+        <fa-icon appPrefix [icon]="icons.faAd"></fa-icon> Test ? <fa-icon appSuffix [icon]="icons.faAd"></fa-icon>
+      </button>
+      <button app-button [loadingStatus]="loadingState" (click)="buttonClick()">Loading</button>
+      <button app-button [disabled]="true">disabled</button>
+    </div>
+
+    <div class="space-x-gutter">
+      <button app-button [style]="'text'">
+        <fa-icon appPrefix [icon]="icons.faAd"></fa-icon> Test ? <fa-icon appSuffix [icon]="icons.faAd"></fa-icon>
+      </button>
+      <button app-button [style]="'text'" [loadingStatus]="loadingState" (click)="buttonClick()">Loading</button>
+      <button app-button [style]="'text'" [disabled]="true">disabled</button>
+    </div>
   </div>
 
-  <div class="space-x-gutter">
-    <button app-button [style]="'text'">
-      <fa-icon appPrefix [icon]="icons.faAd"></fa-icon> Test ? <fa-icon appSuffix [icon]="icons.faAd"></fa-icon>
-    </button>
-    <button app-button [style]="'text'" [loadingStatus]="loadingState" (click)="buttonClick()">Loading</button>
-    <button app-button [style]="'text'" [disabled]="true">disabled</button>
+  <div class="space-y-gutter">
+    <div class="space-x-gutter">
+      <app-form-field>
+        <app-label> Testfeld </app-label>
+        <fa-icon appPrefix [icon]="icons.faAd"></fa-icon>
+        <input appFormInput type="password" [value]="'test'" autocomplete="current-password" />
+        <span appSuffix>mm</span>
+        <fa-icon appSuffix [icon]="icons.faLock"></fa-icon>
+      </app-form-field>
+
+      <app-form-field>
+        <app-label> Testfeld </app-label>
+        <input appFormInput autocomplete="current-password" />
+        <app-hint> Dies ist ein Hinweis</app-hint>
+      </app-form-field>
+      <app-form-field>
+        <app-label> Testfeld </app-label>
+        <input appFormInput type="password" autocomplete="current-password" />
+        <app-error> Dies ist ein Fehler</app-error>
+        <app-hint> Dies ist ein Hinweis</app-hint>
+      </app-form-field>
+      <app-form-field>
+        <app-label> Testfeld disabled </app-label>
+        <input appFormInput type="password" value="test" autocomplete="current-password" [disabled]="true" />
+      </app-form-field>
+    </div>
   </div>
 </div>

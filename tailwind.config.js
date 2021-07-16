@@ -27,7 +27,8 @@ module.exports = {
       info: colors.teal,
     },
     spacing: {
-      none: '0',
+      unset: 'unset',
+      '0': '0',
       gutter: '1.5rem',
 
       xxs: '0.25rem',

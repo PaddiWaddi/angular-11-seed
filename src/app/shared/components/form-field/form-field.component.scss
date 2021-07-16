@@ -1,85 +1,56 @@
 @import 'variables';
 
-.ck-form-field {
+.app-form-field {
   $focused: #{&}--focused;
   $disabled: #{&}--disabled;
   $error: #{&}--error;
 
-  margin: $SizeVeryLarge 0;
-
   &__label {
-    margin-bottom: $SizeVerySmall;
-    padding-left: $SizeSmall;
-
+    ::ng-deep label {
+      @apply transition;
+    }
     #{$disabled} & {
-      color: $FontColorDisabled;
-    }
-
-    #{$focused} & {
-      color: $PrimaryColorDefault;
-    }
-
-    #{$error} & {
-      color: $SignalColorError4;
-    }
-  }
-
-  &__info {
-    display: flex;
-    margin-top: $SizeVerySmall;
-    margin-bottom: -$SizeLarge;
-    padding-left: $SizeSmall;
-  }
-
-  &__box {
-    display: flex;
-    box-sizing: border-box;
-    height: $SizeVeryLarge;
-    padding: 0 $SizeSmall;
-    font-size: $FontSizeRegular;
-    border: solid $BorderWidthStandard $Gray2;
-    border-radius: $BorderRadiusStandard;
-    background-color: $Gray8;
-    box-shadow: 0 0 0 0 $BackgroundColor, 0 0 0 0 $PrimaryColorDefault;
-    transition: box-shadow $DurationFast $EaseRegular;
-
-    #{$focused} & {
-      box-shadow: 0 0 0 2px $BackgroundColor, 0 0 0 4px $PrimaryColorDefault;
-    }
-
-    #{$error} & {
-      border-color: $SignalColorError4;
-    }
-
-    #{$disabled} & {
-      color: $FontColorDisabled;
-      border-color: transparent;
-      background-color: $Gray9;
-    }
-
-    &-prefix {
-      display: inline-flex;
-      align-items: center;
-    }
-
-    &-input {
-      flex: 1 0 50%;
-      padding: $SizeVerySmall 0;
-
-      ::ng-deep [appFormInput] {
-        width: 100%;
-        height: 100%;
-        color: $FontColor3;
-
-        @include placeholder() {
-          color: $FontColor2;
-        }
+      ::ng-deep label {
+        @apply text-gray-600;
       }
     }
 
-    &-suffix {
-      display: inline-flex;
-      align-items: center;
+    #{$error} & {
+      ::ng-deep label {
+        @apply text-danger-500;
+      }
     }
+
+    #{$focused} & {
+      ::ng-deep label {
+        @apply text-brand-500;
+      }
+    }
+
+    @apply mb-xs pl-s;
+  }
+
+  &__box {
+    #{$error} & {
+      @apply border-danger-500;
+    }
+
+    #{$focused} & {
+      @apply ring-2 ring-brand-500 border-brand-500;
+    }
+
+    #{$disabled} & {
+      @apply text-gray-600 border-transparent bg-gray-800;
+    }
+
+    &-input {
+      ::ng-deep [appFormInput] {
+        @apply placeholder-gray-400 bg-transparent w-full h-full;
+      }
+
+      @apply px-0 py-xxs flex-grow flex-shrink-0 flex;
+    }
+
+    @apply flex ring-0 box-border h-l py-0 px-s text-base border text-white border-gray-200 rounded-md bg-gray-700 transition;
   }
 }
