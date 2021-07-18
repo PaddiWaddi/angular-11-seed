@@ -1,5 +1,4 @@
-
-const colors = require('tailwindcss/colors')
+const colors = require('tailwindcss/colors');
 const plugin = require('tailwindcss/plugin')
 
 
@@ -18,6 +17,7 @@ module.exports = {
       white: colors.white,
 
       gray: colors.blueGray,
+
       // brand colors
       brand: colors.yellow,
       // signal colors
@@ -25,6 +25,47 @@ module.exports = {
       danger: colors.red,
       warning: colors.amber,
       info: colors.teal,
+
+      primary: {
+        DEFAULT: 'var(--color-primary)',
+        soft: 'var(--color-primarySoft)',
+        bold: 'var(--color-primaryBold)',
+        'bg': {
+          DEFAULT: 'var(--color-primaryBg)',
+          soft: 'var(--color-primaryBgSoft)',
+          softer: 'var(--color-primaryBgSofter)',
+        },
+        ...colors.blue
+      },
+      neutral: {
+        DEFAULT: 'var(--color-neutral)',
+        soft: 'var(--color-neutralSoft)',
+        bold: 'var(--color-neutralBold)',
+        bg: {
+          DEFAULT: 'var(--color-neutralBg)',
+          soft: 'var(--color-neutralBgSoft)',
+          softer: 'var(--color-neutralBgSofter)',
+        }
+      },
+      on: {
+        'primary': {
+          DEFAULT: 'var(--color-onPrimary)',
+        },
+        'primary-bg': {
+          DEFAULT: 'var(--color-onPrimaryBg)',
+          soft: 'var(--color-onPrimaryBgSoft)',
+          softer: 'var(--color-onPrimaryBgSofter)',
+        },
+        'neutral': {
+          DEFAULT: 'var(--color-onNeutral)',
+        },
+        'neutral-bg': {
+          DEFAULT: 'var(--color-onNeutralBg)',
+          soft: 'var(--color-onNeutralBgSoft)',
+          softer: 'var(--color-onNeutralBgSofter)',
+        }
+      },
+
     },
     spacing: {
       unset: 'unset',

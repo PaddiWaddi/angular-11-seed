@@ -20,7 +20,7 @@
     </div>
   </div>
 
-  <div *ngIf="errors?.length || hints?.length" class="mt-xs mb-l pl-s">
+  <div *ngIf="errors?.length || hints?.length" class="mt-xs mb-l">
     <div *ngIf="!errors?.length && hints?.length" class="flex space-x-xs">
       <ng-content select="app-hint"></ng-content>
     </div>

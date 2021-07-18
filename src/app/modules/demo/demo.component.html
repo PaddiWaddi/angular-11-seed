@@ -1,14 +1,22 @@
-<div class="space-y-xl">
-  <div class="space-y-gutter">
-    <div class="space-x-gutter">
-      <button app-button>
+<div class="space-y-xl md:w-1/2">
+  <div class="space-y-s">
+    <div class="flex space-x-gutter p-l rounded-lg bg-neutral-bg-softer">
+      <button app-button [style]="'text'">
         <fa-icon appPrefix [icon]="icons.faAd"></fa-icon> Test ? <fa-icon appSuffix [icon]="icons.faAd"></fa-icon>
       </button>
-      <button app-button [loadingStatus]="loadingState" (click)="buttonClick()">Loading</button>
-      <button app-button [disabled]="true">disabled</button>
+      <button app-button [style]="'text'" [loadingStatus]="loadingState" (click)="buttonClick()">Loading</button>
+      <button app-button [style]="'text'" [disabled]="true">disabled</button>
     </div>
 
-    <div class="space-x-gutter">
+    <div class="space-x-gutter p-l rounded-lg bg-neutral-bg-soft">
+      <button app-button [style]="'text'">
+        <fa-icon appPrefix [icon]="icons.faAd"></fa-icon> Test ? <fa-icon appSuffix [icon]="icons.faAd"></fa-icon>
+      </button>
+      <button app-button [style]="'text'" [loadingStatus]="loadingState" (click)="buttonClick()">Loading</button>
+      <button app-button [style]="'text'" [disabled]="true">disabled</button>
+    </div>
+
+    <div class="space-x-gutter p-l rounded-lg bg-neutral-bg border-neutral border">
       <button app-button [style]="'text'">
         <fa-icon appPrefix [icon]="icons.faAd"></fa-icon> Test ? <fa-icon appSuffix [icon]="icons.faAd"></fa-icon>
       </button>
@@ -17,7 +25,61 @@
     </div>
   </div>
 
-  <div class="space-y-gutter">
+  <div class="space-y-s">
+    <div class="flex space-x-gutter p-l rounded-lg bg-neutral-bg-softer">
+      <button app-button>
+        <fa-icon appPrefix [icon]="icons.faAd"></fa-icon> Test ? <fa-icon appSuffix [icon]="icons.faAd"></fa-icon>
+      </button>
+      <button app-button [loadingStatus]="loadingState" (click)="buttonClick()">Loading</button>
+      <button app-button [disabled]="true">disabled</button>
+    </div>
+
+    <div class="space-x-gutter p-l rounded-lg bg-neutral-bg-soft">
+      <button app-button>
+        <fa-icon appPrefix [icon]="icons.faAd"></fa-icon> Test ? <fa-icon appSuffix [icon]="icons.faAd"></fa-icon>
+      </button>
+      <button app-button [loadingStatus]="loadingState" (click)="buttonClick()">Loading</button>
+      <button app-button [disabled]="true">disabled</button>
+    </div>
+
+    <div class="space-x-gutter p-l rounded-lg bg-neutral-bg border-neutral border">
+      <button app-button>
+        <fa-icon appPrefix [icon]="icons.faAd"></fa-icon> Test ? <fa-icon appSuffix [icon]="icons.faAd"></fa-icon>
+      </button>
+      <button app-button [loadingStatus]="loadingState" (click)="buttonClick()">Loading</button>
+      <button app-button [disabled]="true">disabled</button>
+    </div>
+  </div>
+
+  <div class="space-y-s">
+    <div class="flex space-x-gutter p-l rounded-lg bg-neutral-bg-softer">
+      <button app-button [color]="'primary'">
+        <fa-icon appPrefix [icon]="icons.faAd"></fa-icon> Test ? <fa-icon appSuffix [icon]="icons.faAd"></fa-icon>
+      </button>
+      <button app-button [color]="'primary'" [loadingStatus]="loadingState" (click)="buttonClick()">Loading</button>
+      <button app-button [color]="'primary'" [disabled]="true">disabled</button>
+    </div>
+
+    <div class="space-x-gutter p-l rounded-lg bg-neutral-bg-soft">
+      <button app-button [color]="'primary'">
+        <fa-icon appPrefix [icon]="icons.faAd"></fa-icon> Test ? <fa-icon appSuffix [icon]="icons.faAd"></fa-icon>
+      </button>
+      <button app-button [color]="'primary'" [loadingStatus]="loadingState" (click)="buttonClick()">Loading</button>
+      <button app-button [color]="'primary'" [disabled]="true">disabled</button>
+    </div>
+
+    <div class="space-x-gutter p-l rounded-lg bg-neutral-bg border-neutral border">
+      <button app-button [color]="'primary'">
+        <fa-icon appPrefix [icon]="icons.faAd"></fa-icon> Test ? <fa-icon appSuffix [icon]="icons.faAd"></fa-icon>
+      </button>
+      <button app-button [color]="'primary'" [loadingStatus]="loadingState" (click)="buttonClick()">Loading</button>
+      <button app-button [color]="'primary'" [disabled]="true">disabled</button>
+    </div>
+  </div>
+</div>
+
+<div class="space-y-gutter mt-xl">
+  <div class="space-y-gutter p-l rounded-lg bg-neutral-bg-softer">
     <div class="space-x-gutter">
       <app-form-field>
         <app-label> Testfeld </app-label>
@@ -42,6 +104,11 @@
         <app-label> Testfeld disabled </app-label>
         <input appFormInput type="password" value="test" autocomplete="current-password" [disabled]="true" />
       </app-form-field>
+    </div>
+    <div class="flex justify-end space-x-m">
+      <button [style]="'text'" app-button>abbrechen</button>
+      <button [color]="'regular'" app-button>abbrechen</button>
+      <button [color]="'primary'" app-button>speichern</button>
     </div>
   </div>
 </div>

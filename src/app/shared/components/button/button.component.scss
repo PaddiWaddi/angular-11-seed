@@ -7,15 +7,19 @@
 .app-button {
   $styleRegular: #{&}--style-regular;
   $styleText: #{&}--style-text;
+
   $colorRegular: #{&}--color-regular;
   $colorPrimary: #{&}--color-primary;
+  $colorDanger: #{&}--color-danger;
 
   $loading: #{&}--loading;
   $loadingError: #{&}--loading-error;
 
+  will-change: contents;
+
   &[disabled],
   &#{loading} {
-    @apply cursor-default;
+    @apply cursor-default duration-500;
   }
 
   &#{$loadingError} {
@@ -26,11 +30,20 @@
   &#{$styleRegular} {
     &#{$colorRegular} {
       &[disabled] {
-        @apply bg-gray-800 text-gray-500;
+        @apply bg-transparent text-neutral-soft;
       }
 
-      @apply bg-gray-600;
-      @apply hover:bg-gray-500 active:bg-gray-400;
+      @apply bg-neutral-bg-softer text-on-neutral-bg-soft border border-neutral-soft;
+      @apply hover:bg-neutral-bg hover:text-on-neutral-bg-soft;
+    }
+
+    &#{$colorPrimary} {
+      &[disabled] {
+        @apply bg-primary-bg-soft text-primary-soft;
+      }
+
+      @apply bg-primary text-on-primary;
+      @apply hover:bg-primary-soft hover:text-on-primary;
     }
   }
 
@@ -38,17 +51,17 @@
   &#{$styleText} {
     &#{$colorRegular} {
       &[disabled] {
-        @apply bg-transparent;
+        @apply bg-transparent text-neutral-soft;
       }
 
-      @apply bg-transparent text-white;
-      @apply hover:bg-gray-800 active:bg-gray-600;
+      @apply bg-transparent text-on-neutral-bg-soft border border-transparent;
+      @apply hover:bg-neutral-bg hover:text-on-neutral-bg-soft hover:border-neutral-soft;
     }
   }
 
   &__prefix {
     #{$loading} & {
-      @apply opacity-20;
+      @apply opacity-0;
     }
 
     @apply mr-xs inline-flex align-middle transition-opacity;
@@ -56,7 +69,7 @@
 
   &__suffix {
     #{$loading} & {
-      @apply opacity-20;
+      @apply opacity-0;
     }
 
     @apply ml-xs inline-flex align-middle transition-opacity;
@@ -64,10 +77,10 @@
 
   &__content {
     #{$loading} & {
-      @apply opacity-20 scale-75;
+      @apply opacity-0 scale-75;
     }
 
-    @apply scale-100 transition;
+    @apply scale-100;
   }
 
   &__loading {
@@ -79,8 +92,8 @@
   }
 
   @apply after:absolute after:-top-s after:-left-s after:-right-s after:-bottom-s;
-  @apply select-none animate-none relative flex transition appearance-none outline-none;
-  @apply px-s py-xs rounded-md text-white ring-0 ring-brand-500 uppercase;
+  @apply select-none animate-none relative flex justify-center transition-all  appearance-none outline-none;
+  @apply px-s py-xs rounded-md text-white ring-0 ring-brand-500;
   @apply focus:ring-2 focus:ring-brand-500;
   @apply active:scale-95;
 }

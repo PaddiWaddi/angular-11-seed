@@ -1,0 +1,29 @@
+/* global.css */
+.app-theme-dark {
+  //
+  --color-onPrimaryBg: var(--color-primary-100);
+  --color-onPrimaryBgSoft: var(--color-primary-200);
+  --color-onPrimaryBgSofter: var(--color-primary-300);
+  --color-onPrimary: var(--color-primary-50);
+  //
+  --color-primaryBold: var(--color-primary-300);
+  --color-primary: var(--color-primary-500);
+  --color-primarySoft: var(--color-primary-600);
+  //
+  --color-primaryBgSofter: var(--color-primary-800);
+  --color-primaryBgSoft: var(--color-primary-700);
+  --color-primaryBg: var(--color-primary-600);
+  //
+  --color-neutralBg: var(--color-neutral-800);
+  --color-neutralBgSoft: var(--color-neutral-700);
+  --color-neutralBgSofter: var(--color-neutral-600);
+  //
+  --color-neutralSoft: var(--color-neutral-500);
+  --color-neutral: var(--color-neutral-400);
+  --color-neutralBold: var(--color-neutral-300);
+  //
+  --color-onNeutralBgSofter: var(--color-neutral-200);
+  --color-onNeutralBgSoft: var(--color-neutral-100);
+  --color-onNeutralBg: var(--color-neutral-100);
+  --color-onNeutral: var(--color-neutral-50);
+}

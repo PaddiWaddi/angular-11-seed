@@ -1,3 +1,29 @@
+/* global.css */
+:root {
+  // primary color
+  --color-primary-50: theme('colors.primary.50');
+  --color-primary-100: theme('colors.primary.100');
+  --color-primary-200: theme('colors.primary.200');
+  --color-primary-300: theme('colors.primary.300');
+  --color-primary-400: theme('colors.primary.400');
+  --color-primary-500: theme('colors.primary.500');
+  --color-primary-600: theme('colors.primary.600');
+  --color-primary-700: theme('colors.primary.700');
+  --color-primary-800: theme('colors.primary.800');
+  --color-primary-900: theme('colors.primary.900');
+  // neutral color
+  --color-neutral-50: theme('colors.gray.50');
+  --color-neutral-100: theme('colors.gray.100');
+  --color-neutral-200: theme('colors.gray.200');
+  --color-neutral-300: theme('colors.gray.300');
+  --color-neutral-400: theme('colors.gray.400');
+  --color-neutral-500: theme('colors.gray.500');
+  --color-neutral-600: theme('colors.gray.600');
+  --color-neutral-700: theme('colors.gray.700');
+  --color-neutral-800: theme('colors.gray.800');
+  --color-neutral-900: theme('colors.gray.900');
+}
+
 // Primary Colors
 $PrimaryColor1: #e7effd;
 $PrimaryColor2: #c3dcfd;

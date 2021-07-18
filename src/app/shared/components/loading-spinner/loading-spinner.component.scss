@@ -22,15 +22,16 @@ $width: $SizeMedium;
     stroke-linecap: round;
     stroke-dasharray: 20, 200;
     stroke-dashoffset: 0;
-    stroke: $Gray10;
 
     &--primary {
-      stroke: $Gray1;
+      @apply text-on-primary-bg;
     }
 
     &--regular {
-      stroke: $Gray1;
+      @apply text-on-neutral-bg;
     }
+
+    @apply stroke-current;
   }
 
   &__circular {

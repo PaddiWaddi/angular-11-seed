@@ -1,9 +1,12 @@
 // variables
+@import 'variables';
+@import 'variables/light.theme.scss';
+@import 'variables/dark.theme.scss';
+// tailwind
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-@import 'variables';
 body {
   margin: 0;
   padding: 0;
