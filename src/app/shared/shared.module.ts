@@ -1,8 +1,12 @@
+import { OverlayModule } from '@angular/cdk/overlay';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { ButtonComponent } from './components/button/button.component';
+import { DialogService } from './components/dialog/dialog.service';
+import { MessageDialogComponent } from './components/dialog/message-dialog/message-dialog.component';
+import { OverlayComponent } from './components/dialog/overlay.component';
 import { ErrorComponent } from './components/error/error.component';
 import { FormFieldComponent } from './components/form-field/form-field.component';
 import { FormInputComponent } from './components/form-field/form-input.component';
@@ -13,13 +17,15 @@ import { LoadingSpinnerComponent } from './components/loading-spinner/loading-sp
 import { PrefixDirective } from './directives/prefix.directive';
 import { SuffixDirective } from './directives/suffix.directive';
 
-const MODULES = [FontAwesomeModule];
+const MODULES: any[] = [OverlayModule];
 
 const COMPONENTS = [
   ButtonComponent,
   ErrorComponent,
   FormFieldComponent,
   FormInputComponent,
+  OverlayComponent,
+  MessageDialogComponent,
   // HeadlineComponent,
   HintComponent,
   LabelComponent,
@@ -36,7 +42,8 @@ const DIRECTIVES = [PrefixDirective, SuffixDirective];
 
 @NgModule({
   declarations: [...COMPONENTS, ...DIRECTIVES],
-  imports: [CommonModule, ...MODULES],
+  imports: [CommonModule, FontAwesomeModule, ...MODULES],
+  providers: [DialogService],
   exports: [...MODULES, ...COMPONENTS, ...DIRECTIVES],
 })
 export class SharedModule {}

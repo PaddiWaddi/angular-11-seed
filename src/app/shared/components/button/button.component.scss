@@ -34,7 +34,7 @@
       }
 
       @apply bg-neutral-bg-softer text-on-neutral-bg-soft border border-neutral-soft;
-      @apply hover:bg-neutral-bg hover:text-on-neutral-bg-soft;
+      @apply hover:bg-neutral-bg-soft hover:text-on-neutral-bg-soft;
     }
 
     &#{$colorPrimary} {
@@ -55,7 +55,7 @@
       }
 
       @apply bg-transparent text-on-neutral-bg-soft border border-transparent;
-      @apply hover:bg-neutral-bg hover:text-on-neutral-bg-soft hover:border-neutral-soft;
+      @apply hover:bg-neutral-bg-soft hover:text-on-neutral-bg-soft hover:border-neutral-soft;
     }
   }
 

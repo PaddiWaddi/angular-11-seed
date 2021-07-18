@@ -8,6 +8,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [DemoComponent],
+  providers: [],
   imports: [CommonModule, DemoRoutingModule, SharedModule, FontAwesomeModule],
 })
 export class DemoModule {}
