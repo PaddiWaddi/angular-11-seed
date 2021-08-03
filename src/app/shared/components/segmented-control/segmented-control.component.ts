@@ -13,7 +13,7 @@ import {
 } from '@angular/core';
 import { SegmentComponent } from '../segment/segment.component';
 import { takeUntil } from 'rxjs/operators';
-import { UnsubscribeDirective } from '../../helpers/unsubscribe.directive';
+import { UnsubscribeDirective } from '@core/helpers/unsubscribe.directive';
 
 /**
  * Control that works like a radio group with options where only one can be chosen.

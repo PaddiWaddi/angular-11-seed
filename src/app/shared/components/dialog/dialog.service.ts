@@ -10,7 +10,7 @@ import { OverlayComponent } from './overlay.component';
 export class DialogService {
   constructor(private overlay: Overlay, private injector: Injector) {}
 
-  open<R = any, T = any>(content: string | TemplateRef<any> | Type<any>, data: T): DialogRef<R> {
+  public open<R = any, T = any>(content: string | TemplateRef<any> | Type<any>, data: T): DialogRef<R> {
     const configs = this.getOverlayConfig(
       new OverlayConfig({
         hasBackdrop: true,
@@ -29,7 +29,7 @@ export class DialogService {
     return myOverlayRef;
   }
 
-  createInjector(ref: DialogRef, inj: Injector) {
+  private createInjector(ref: DialogRef, inj: Injector): PortalInjector {
     const injectorTokens = new WeakMap([[DialogRef, ref]]);
     return new PortalInjector(inj, injectorTokens);
   }

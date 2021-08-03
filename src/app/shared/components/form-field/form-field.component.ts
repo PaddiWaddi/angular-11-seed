@@ -12,7 +12,7 @@ import { startWith, takeUntil } from 'rxjs/operators';
 
 import { PrefixDirective } from '../../directives/prefix.directive';
 import { SuffixDirective } from '../../directives/suffix.directive';
-import { UnsubscribeDirective } from '@shared/helpers/unsubscribe.directive';
+import { UnsubscribeDirective } from '@core/helpers/unsubscribe.directive';
 import { FormInputComponent } from './form-input.component';
 import { LabelComponent } from '../label/label.component';
 import { ErrorComponent } from '../error/error.component';
