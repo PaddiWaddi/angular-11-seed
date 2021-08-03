@@ -1,4 +1,4 @@
-import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 
 /**
  * Label element
@@ -13,4 +13,19 @@ export class LabelComponent {
   /** For html attribute to attach this to input elements */
   @Input()
   public for?: string;
+
+  constructor(private cdRef: ChangeDetectorRef) {}
+
+  /**
+   * Set the for value programmatically, and triggers change detection
+   * @param for the value to set for to
+   */
+  public setFor(value: string): void {
+    if (this.for === value) {
+      return;
+    }
+    this.for = value;
+
+    this.cdRef.markForCheck();
+  }
 }

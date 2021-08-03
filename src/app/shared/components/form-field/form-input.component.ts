@@ -79,7 +79,7 @@ export class FormInputComponent extends UnsubscribeDirective implements OnChange
   public id = `form-input-${uniqueId++}`;
 
   /** True if focused */
-  public focused = false;
+  public focused: boolean = false;
 
   /**
    * Handles blur of input

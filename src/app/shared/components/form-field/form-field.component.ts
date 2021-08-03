@@ -49,7 +49,7 @@ export class FormFieldComponent extends UnsubscribeDirective implements OnInit, 
   public input?: FormInputComponent;
 
   /** Label element to show or hide html */
-  @ContentChild(LabelComponent, { static: true })
+  @ContentChild(LabelComponent, { static: false })
   public label?: LabelComponent;
 
   /** Error elements to show or hide html */
@@ -61,13 +61,13 @@ export class FormFieldComponent extends UnsubscribeDirective implements OnInit, 
   public hints: QueryList<HintComponent> = new QueryList<HintComponent>();
 
   /** True if input is disabled */
-  public isDisabled = false;
+  public isDisabled: boolean = false;
   /** True if input is focused */
-  public isFocused = false;
+  public isFocused: boolean = false;
   /** Input value */
-  public value = '';
+  public value: string = '';
   /** Placeholder of input */
-  public placeholder = '';
+  public placeholder: string = '';
 
   /**
    * Constructor
@@ -90,17 +90,11 @@ export class FormFieldComponent extends UnsubscribeDirective implements OnInit, 
    */
   public ngAfterContentInit(): void {
     if (this.input && this.input.stateChanges) {
-      this.input.stateChanges
-        .pipe(
-          // `<string>` is needed to remove deprecated warning. Related issue: https://github.com/ReactiveX/rxjs/issues/4772
-          startWith(null as unknown as string),
-          takeUntil(this.ngUnsubscribe)
-        )
-        .subscribe((change) => {
-          setTimeout(() => {
-            this.updateInputStates();
-          }, 0);
-        });
+      this.input.stateChanges.pipe(startWith(null), takeUntil(this.ngUnsubscribe)).subscribe((change) => {
+        setTimeout(() => {
+          this.updateInputStates();
+        }, 0);
+      });
     }
 
     if (this.input) {
@@ -121,7 +115,7 @@ export class FormFieldComponent extends UnsubscribeDirective implements OnInit, 
     this.isFocused = this.input.focused;
 
     if (this.label) {
-      this.label.for = this.input.id;
+      this.label.setFor(this.input.id);
     }
     this.changes.markForCheck();
   }
