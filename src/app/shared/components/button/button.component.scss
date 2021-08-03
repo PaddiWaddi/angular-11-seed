@@ -2,6 +2,7 @@
 
 :host {
   @apply inline-block;
+  @apply focus:ring-2 focus-within:ring-brand-500;
 }
 
 .app-button {
@@ -94,6 +95,5 @@
   @apply after:absolute after:-top-s after:-left-s after:-right-s after:-bottom-s;
   @apply select-none animate-none relative flex justify-center transition-all  appearance-none outline-none;
   @apply px-s py-xs rounded-md text-white ring-0 ring-brand-500;
-  @apply focus:ring-2 focus:ring-brand-500;
   @apply active:scale-95;
 }

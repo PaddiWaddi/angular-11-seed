@@ -46,7 +46,7 @@ let uniqueId = 0;
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FormInputComponent extends UnsubscribeDirective implements OnChanges, AfterViewInit {
-  /** Stream that emits whenever the state of the input changes such that the wrapping `BevFormField` needs to run change detection. */
+  /** Stream that emits whenever the state of the input changes such that the wrapping `FormField` needs to run change detection. */
   public stateChanges: Subject<INPUT_STATE_CHANGE> = new Subject<INPUT_STATE_CHANGE>();
 
   /** Bind CSS-class */
