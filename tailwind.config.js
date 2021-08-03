@@ -65,6 +65,10 @@ module.exports = {
           softer: 'var(--color-onNeutralBgSofter)',
         }
       },
+      focus: {
+        DEFAULT: 'var(--color-focus)',
+        soft: 'var(--color-focus-soft)',
+      }
 
     },
     spacing: {

@@ -12,11 +12,9 @@ export class AppComponent {
   ngOnInit(): void {
     this.renderer.addClass(this.document.body, 'app-theme-dark');
 
-    this.http
-      .get('http://ztix-api.vcap.me/sale/events/?test=123', { params: { booking_office: 1 } })
-      .subscribe((res) => {
-        console.log(res);
-      });
+    this.http.get('http://ztix-api.vcap.me/sale/events/', { params: { booking_office: 1 } }).subscribe((res) => {
+      console.log(res);
+    });
   }
 
   ngOnDestroy(): void {

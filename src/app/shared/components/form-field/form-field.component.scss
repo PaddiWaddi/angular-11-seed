@@ -21,11 +21,6 @@
       }
     }
 
-    #{$focused} & {
-      ::ng-deep label {
-      }
-    }
-
     @apply mb-xs;
   }
 
@@ -35,7 +30,7 @@
     }
 
     #{$focused} & {
-      @apply ring-4 ring-primary-bg-soft border-primary-bold;
+      @apply ring-4 ring-focus-soft border-focus;
     }
 
     #{$disabled} & {
