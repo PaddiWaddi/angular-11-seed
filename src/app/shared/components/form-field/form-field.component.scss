@@ -11,13 +11,13 @@
     }
     #{$disabled} & {
       ::ng-deep label {
-        @apply text-neutral-soft;
+        @apply opacity-25;
       }
     }
 
     #{$error} & {
       ::ng-deep label {
-        @apply text-danger-500;
+        @apply text-tint-danger;
       }
     }
 
@@ -26,25 +26,37 @@
 
   &__box {
     #{$error} & {
-      @apply border-danger-500;
+      @apply border-tint-danger;
     }
 
     #{$focused} & {
-      @apply ring-4 ring-focus-soft border-focus;
+      @apply ring-4 ring-tint-blue-soft bg-fill-5;
+    }
+
+    #{$focused}#{$error} & {
+      @apply ring-tint-danger-soft border;
     }
 
     #{$disabled} & {
-      @apply border-neutral-soft bg-neutral-bg-soft text-neutral-bg-softer;
+      @apply opacity-25;
     }
 
     &-input {
       ::ng-deep [appFormInput] {
-        @apply placeholder-neutral-soft bg-transparent w-full h-full;
+        @apply placeholder-label-secondary bg-transparent w-full h-full;
       }
 
       @apply px-0 py-xxs flex-grow flex-shrink-0 flex;
     }
 
-    @apply flex ring-0 box-border h-l py-0 px-s text-base text-on-neutral-bg-softer border border-neutral-bold rounded-md bg-neutral-bg-softer transition;
+    @apply flex ring-0 box-border h-l py-0 px-s text-base text-label-primary border border-fill-3 rounded-md bg-fill-6 transition duration-300;
+  }
+
+  &__hints {
+    #{$disabled} & {
+      @apply opacity-25;
+    }
+
+    @apply mt-xs mb-l;
   }
 }

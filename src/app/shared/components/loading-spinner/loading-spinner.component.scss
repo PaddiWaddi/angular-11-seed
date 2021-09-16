@@ -24,11 +24,11 @@ $width: $SizeMedium;
     stroke-dashoffset: 0;
 
     &--primary {
-      @apply text-on-primary-bg;
+      @apply text-label-primary;
     }
 
     &--regular {
-      @apply text-on-neutral-bg;
+      @apply text-label-primary;
     }
 
     @apply stroke-current;
@@ -44,7 +44,7 @@ $width: $SizeMedium;
     height: 100%;
     margin: auto;
     transform-origin: center center;
-    animation: rotateAnimation 0.3s linear infinite;
+    animation: rotateAnimation 0.4s linear infinite;
   }
 }
 

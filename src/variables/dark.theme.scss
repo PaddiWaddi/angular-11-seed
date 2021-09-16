@@ -1,66 +1,44 @@
 /* global.css */
+@mixin themeDark {
+  // background
+  --color-background-primary: rgb(var(--color-neutral-900));
+  --color-background-secondary: rgb(var(--color-neutral-800));
+  --color-background-tertiary: rgb(var(--color-neutral-700));
+
+  // label
+  --color-label-primary: rgb(var(--color-neutral-50));
+  --color-label-secondary: rgb(var(--color-neutral-400));
+  --color-label-tertiary: rgb(var(--color-neutral-500));
+  --color-label-quaternary: rgb(var(--color-neutral-600));
+
+  // fill
+  --color-fill-1: rgb(var(--color-neutral-200));
+  --color-fill-2: rgb(var(--color-neutral-300));
+  --color-fill-3: rgb(var(--color-neutral-400));
+  --color-fill-4: rgb(var(--color-neutral-500));
+  --color-fill-5: rgb(var(--color-neutral-600));
+  --color-fill-6: rgb(var(--color-neutral-700));
+
+  // tint
+  --color-tint-blue: var(--color-primary-500);
+  --color-tint-blue-soft: var(--color-primary-800);
+  --color-tint-blue-strong: var(--color-primary-200);
+  //
+  --color-tint-warning: var(--color-warning-500);
+  --color-tint-warning-soft: var(--color-warning-700);
+  --color-tint-warning-strong: var(--color-warning-200);
+  //
+  --color-tint-danger: rgba(var(--color-danger-500));
+  --color-tint-danger-soft: rgba(var(--color-danger-500), 0.4);
+  --color-tint-danger-strong: rgba(var(--color-danger-700), 0.8);
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
-    //
-    --color-onPrimaryBg: var(--color-primary-100);
-    --color-onPrimaryBgSoft: var(--color-primary-200);
-    --color-onPrimaryBgSofter: var(--color-primary-300);
-    --color-onPrimary: var(--color-primary-50);
-    //
-    --color-primaryBold: var(--color-primary-300);
-    --color-primary: var(--color-primary-500);
-    --color-primarySoft: var(--color-primary-600);
-    //
-    --color-primaryBgSofter: var(--color-primary-800);
-    --color-primaryBgSoft: var(--color-primary-700);
-    --color-primaryBg: var(--color-primary-600);
-    //
-    --color-neutralBg: var(--color-neutral-800);
-    --color-neutralBgSoft: var(--color-neutral-700);
-    --color-neutralBgSofter: var(--color-neutral-600);
-    //
-    --color-neutralSoft: var(--color-neutral-500);
-    --color-neutral: var(--color-neutral-400);
-    --color-neutralBold: var(--color-neutral-300);
-    //
-    --color-onNeutralBgSofter: var(--color-neutral-200);
-    --color-onNeutralBgSoft: var(--color-neutral-100);
-    --color-onNeutralBg: var(--color-neutral-100);
-    --color-onNeutral: var(--color-neutral-50);
-    //
-    --color-focus: var(--color-primary-200);
-    --color-focus-soft: var(--color-primary-600);
+    @include themeDark();
   }
 }
 
 .app-theme-dark {
-  //
-  --color-onPrimaryBg: var(--color-primary-100);
-  --color-onPrimaryBgSoft: var(--color-primary-200);
-  --color-onPrimaryBgSofter: var(--color-primary-300);
-  --color-onPrimary: var(--color-primary-50);
-  //
-  --color-primaryBold: var(--color-primary-300);
-  --color-primary: var(--color-primary-500);
-  --color-primarySoft: var(--color-primary-600);
-  //
-  --color-primaryBgSofter: var(--color-primary-800);
-  --color-primaryBgSoft: var(--color-primary-700);
-  --color-primaryBg: var(--color-primary-600);
-  //
-  --color-neutralBg: var(--color-neutral-800);
-  --color-neutralBgSoft: var(--color-neutral-700);
-  --color-neutralBgSofter: var(--color-neutral-600);
-  //
-  --color-neutralSoft: var(--color-neutral-500);
-  --color-neutral: var(--color-neutral-400);
-  --color-neutralBold: var(--color-neutral-300);
-  //
-  --color-onNeutralBgSofter: var(--color-neutral-200);
-  --color-onNeutralBgSoft: var(--color-neutral-100);
-  --color-onNeutralBg: var(--color-neutral-100);
-  --color-onNeutral: var(--color-neutral-50);
-  //
-  --color-focus: var(--color-primary-200);
-  --color-focus-soft: var(--color-primary-600);
+  @include themeDark();
 }

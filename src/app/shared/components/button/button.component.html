@@ -7,7 +7,7 @@
   [class.app-button--loading]="loadingStatus === 'loading'"
   [class.app-button--loading-error]="loadingStatus === 'error'"
   [class.app-button--loading-success]="loadingStatus === 'success'"
-  [attr.disabled]="disabled || loadingStatus === 'loading' || null"
+  [attr.disabled]="disabled || null"
 >
   <div *ngIf="prefix" class="app-button__prefix">
     <ng-content select="fa-icon[appPrefix]"></ng-content>

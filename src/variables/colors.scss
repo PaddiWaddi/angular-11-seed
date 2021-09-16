@@ -11,49 +11,72 @@
   --color-primary-700: theme('colors.primary.700');
   --color-primary-800: theme('colors.primary.800');
   --color-primary-900: theme('colors.primary.900');
+  // warning color
+  --color-warning-50: theme('colors.warning.50');
+  --color-warning-100: theme('colors.warning.100');
+  --color-warning-200: theme('colors.warning.200');
+  --color-warning-300: theme('colors.warning.300');
+  --color-warning-400: theme('colors.warning.400');
+  --color-warning-500: theme('colors.warning.500');
+  --color-warning-600: theme('colors.warning.600');
+  --color-warning-700: theme('colors.warning.700');
+  --color-warning-800: theme('colors.warning.800');
+  --color-warning-900: theme('colors.warning.900');
+  // warning color
+  --color-danger-50: #fef2f2;
+  --color-danger-100: #fee2e2;
+  --color-danger-200: 254, 202, 202;
+  --color-danger-300: theme('colors.danger.300');
+  --color-danger-400: theme('colors.danger.400');
+  --color-danger-500: 239, 68, 68;
+  --color-danger-600: theme('colors.danger.600');
+  --color-danger-700: 185, 28, 28;
+  --color-danger-800: theme('colors.danger.800');
+  --color-danger-900: theme('colors.danger.900');
+
   // neutral color
-  --color-neutral-50: theme('colors.gray.50');
-  --color-neutral-100: theme('colors.gray.100');
-  --color-neutral-200: theme('colors.gray.200');
-  --color-neutral-300: theme('colors.gray.300');
-  --color-neutral-400: theme('colors.gray.400');
-  --color-neutral-500: theme('colors.gray.500');
-  --color-neutral-600: theme('colors.gray.600');
-  --color-neutral-700: theme('colors.gray.700');
-  --color-neutral-800: theme('colors.gray.800');
-  --color-neutral-900: theme('colors.gray.900');
-  // default theme
-  // primary
-  // bg
-  --color-primaryBg: var(--color-primary-300);
-  --color-primaryBgSoft: var(--color-primary-200);
-  --color-primaryBgSofter: var(--color-primary-100);
-  // regular
-  --color-primarySoft: var(--color-primary-400);
-  --color-primary: var(--color-primary-500);
-  --color-primaryBold: var(--color-primary-600);
-  // text
-  --color-onPrimaryBgSofter: var(--color-primary-700);
-  --color-onPrimaryBgSoft: var(--color-primary-800);
-  --color-onPrimaryBg: var(--color-primary-900);
-  --color-onPrimary: var(--color-primary-50);
-  // Neutral
-  // bg
-  --color-neutralBg: var(--color-neutral-300);
-  --color-neutralBgSoft: var(--color-neutral-200);
-  --color-neutralBgSofter: var(--color-neutral-100);
-  // regular
-  --color-neutralSoft: var(--color-neutral-400);
-  --color-neutral: var(--color-neutral-500);
-  --color-neutralBold: var(--color-neutral-600);
-  // text
-  --color-onNeutralBgSofter: var(--color-neutral-700);
-  --color-onNeutralBgSoft: var(--color-neutral-800);
-  --color-onNeutralBg: var(--color-neutral-900);
-  --color-onNeutral: var(--color-neutral-50);
+  --color-neutral-50: 249, 250, 251;
+  --color-neutral-100: 243, 244, 246;
+  --color-neutral-200: 229, 231, 235;
+  --color-neutral-300: 209, 213, 219;
+  --color-neutral-400: 156, 163, 175;
+  --color-neutral-500: 107, 114, 128;
+  --color-neutral-600: 75, 85, 99;
+  --color-neutral-700: 55, 65, 81;
+  --color-neutral-800: 31, 41, 55;
+  --color-neutral-900: 17, 24, 39;
+
+  // background
+  --color-background-primary: rgb(var(--color-neutral-200));
+  --color-background-secondary: rgb(var(--color-neutral-100));
+  --color-background-tertiary: rgb(var(--color-neutral-50));
+
+  // label
+  --color-label-primary: rgb(var(--color-neutral-900));
+  --color-label-secondary: rgb(var(--color-neutral-500));
+  --color-label-tertiary: rgb(var(--color-neutral-400));
+  --color-label-quaternary: rgb(var(--color-neutral-300));
+
+  // fill
+  --color-fill-1: rgb(var(--color-neutral-700));
+  --color-fill-2: rgb(var(--color-neutral-600));
+  --color-fill-3: rgb(var(--color-neutral-500));
+  --color-fill-4: rgb(var(--color-neutral-400));
+  --color-fill-5: rgb(var(--color-neutral-300));
+  --color-fill-6: rgb(var(--color-neutral-200));
+
+  // tint
+  --color-tint-blue: var(--color-primary-500);
+  --color-tint-blue-soft: var(--color-primary-200);
+  --color-tint-blue-strong: var(--color-primary-700);
   //
-  --color-focus: var(--color-primary-600);
-  --color-focus-soft: var(--color-primary-200);
+  --color-tint-warning: var(--color-warning-500);
+  --color-tint-warning-soft: var(--color-warning-200);
+  --color-tint-warning-strong: var(--color-warning-700);
+  //
+  --color-tint-danger: rgba(var(--color-danger-500), 0.8);
+  --color-tint-danger-soft: rgba(var(--color-danger-200), 0.8);
+  --color-tint-danger-strong: rgba(var(--color-danger-700), 0.8);
 }
 
 // Primary Colors

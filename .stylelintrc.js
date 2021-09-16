@@ -548,8 +548,8 @@ module.exports = {
       [...PROPERTY_ORDER],
       {
         // unspecified: 'bottomAlphabetical',
-        // emptyLineBeforeUnspecified: 'never', // Change it to 'threshold' if this bug is resolved: https://github.com/hudochenkov/stylelint-order/issues/87
-        // emptyLineMinimumPropertyThreshold: 4,
+        //emptyLineBeforeUnspecified: 'never', // Change it to 'threshold' if this bug is resolved: https://github.com/hudochenkov/stylelint-order/issues/87
+        //emptyLineMinimumPropertyThreshold: 4,
       },
     ],
     'plugin/no-low-performance-animation-properties': [

@@ -9,11 +9,7 @@ import { Component, Inject, Renderer2 } from '@angular/core';
 export class AppComponent {
   constructor(@Inject(DOCUMENT) private document: Document, private renderer: Renderer2, private http: HttpClient) {}
 
-  ngOnInit(): void {
-    this.http.get('http://ztix-api.vcap.me/sale/events/', { params: { booking_office: 1 } }).subscribe((res) => {
-      console.log(res);
-    });
-  }
+  ngOnInit(): void {}
 
   ngOnDestroy(): void {}
 }

@@ -23,6 +23,10 @@
     @apply cursor-default duration-500;
   }
 
+  &#{loading} {
+    @apply scale-x-150 duration-1000;
+  }
+
   &#{$loadingError} {
     @apply animate-shake-error;
   }
@@ -31,20 +35,20 @@
   &#{$styleRegular} {
     &#{$colorRegular} {
       &[disabled] {
-        @apply bg-transparent text-neutral-soft;
+        @apply opacity-25;
       }
 
-      @apply bg-neutral-bg-softer text-on-neutral-bg-soft border border-neutral-soft;
-      @apply hover:bg-neutral-bg-soft hover:text-on-neutral-bg-soft;
+      @apply bg-fill-5 text-label-primary;
+      @apply hover:bg-fill-4 hover:text-label-primary;
     }
 
     &#{$colorPrimary} {
       &[disabled] {
-        @apply bg-primary-bg-soft text-primary-soft;
+        @apply opacity-25;
       }
 
-      @apply bg-primary text-on-primary;
-      @apply hover:bg-primary-soft hover:text-on-primary;
+      @apply bg-tint-blue text-label-primary;
+      @apply hover:bg-tint-blue-soft hover:text-label-primary;
     }
   }
 
@@ -52,11 +56,11 @@
   &#{$styleText} {
     &#{$colorRegular} {
       &[disabled] {
-        @apply bg-transparent text-neutral-soft;
+        @apply opacity-25;
       }
 
-      @apply bg-transparent text-on-neutral-bg-soft border border-transparent;
-      @apply hover:bg-neutral-bg-soft hover:text-on-neutral-bg-soft hover:border-neutral-soft;
+      @apply bg-transparent text-label-secondary;
+      @apply hover:bg-fill-5 hover:text-label-primary;
     }
   }
 

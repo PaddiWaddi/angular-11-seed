@@ -1,6 +1,6 @@
 <div class="space-y-xl md:w-1/2">
   <div class="space-y-s">
-    <div class="flex space-x-gutter p-l rounded-lg bg-neutral-bg-softer">
+    <div class="flex space-x-gutter p-l rounded-lg bg-background-primary">
       <button app-button [style]="'text'">
         <fa-icon appPrefix [icon]="icons.faAd"></fa-icon> Test ? <fa-icon appSuffix [icon]="icons.faAd"></fa-icon>
       </button>
@@ -8,7 +8,7 @@
       <button app-button [style]="'text'" [disabled]="true">disabled</button>
     </div>
 
-    <div class="space-x-gutter p-l rounded-lg bg-neutral-bg-soft">
+    <div class="space-x-gutter p-l rounded-lg bg-background-secondary">
       <button app-button [style]="'text'">
         <fa-icon appPrefix [icon]="icons.faAd"></fa-icon> Test ? <fa-icon appSuffix [icon]="icons.faAd"></fa-icon>
       </button>
@@ -16,7 +16,7 @@
       <button app-button [style]="'text'" [disabled]="true">disabled</button>
     </div>
 
-    <div class="space-x-gutter p-l rounded-lg bg-neutral-bg border-neutral border">
+    <div class="space-x-gutter p-l rounded-lg bg-background-tertiary">
       <button app-button [style]="'text'">
         <fa-icon appPrefix [icon]="icons.faAd"></fa-icon> Test ? <fa-icon appSuffix [icon]="icons.faAd"></fa-icon>
       </button>
@@ -26,7 +26,7 @@
   </div>
 
   <div class="space-y-s">
-    <div class="flex space-x-gutter p-l rounded-lg bg-neutral-bg-softer">
+    <div class="flex space-x-gutter p-l rounded-lg bg-background-primary">
       <button app-button>
         <fa-icon appPrefix [icon]="icons.faAd"></fa-icon> Test ? <fa-icon appSuffix [icon]="icons.faAd"></fa-icon>
       </button>
@@ -34,7 +34,7 @@
       <button app-button [disabled]="true">disabled</button>
     </div>
 
-    <div class="space-x-gutter p-l rounded-lg bg-neutral-bg-soft">
+    <div class="space-x-gutter p-l rounded-lg bg-background-secondary">
       <button app-button>
         <fa-icon appPrefix [icon]="icons.faAd"></fa-icon> Test ? <fa-icon appSuffix [icon]="icons.faAd"></fa-icon>
       </button>
@@ -42,7 +42,7 @@
       <button app-button [disabled]="true">disabled</button>
     </div>
 
-    <div class="space-x-gutter p-l rounded-lg bg-neutral-bg border-neutral border">
+    <div class="space-x-gutter p-l rounded-lg bg-background-tertiary">
       <button app-button>
         <fa-icon appPrefix [icon]="icons.faAd"></fa-icon> Test ? <fa-icon appSuffix [icon]="icons.faAd"></fa-icon>
       </button>
@@ -79,7 +79,7 @@
 </div>
 
 <div class="space-y-gutter mt-xl">
-  <div class="space-y-gutter p-l rounded-lg bg-neutral-bg-softer">
+  <div class="space-y-gutter p-l rounded-lg bg-background-tertiary">
     <div class="space-x-gutter">
       <app-form-field>
         <app-label> Testfeld </app-label>
@@ -103,6 +103,7 @@
       <app-form-field>
         <app-label> Testfeld disabled </app-label>
         <input appFormInput type="password" value="test" autocomplete="current-password" [disabled]="true" />
+        <app-error> Dies ist ein Fehler</app-error>
       </app-form-field>
     </div>
     <div class="flex justify-end space-x-m">

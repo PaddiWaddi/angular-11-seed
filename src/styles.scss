@@ -1,6 +1,5 @@
 // variables
 @import 'variables';
-@import 'variables/light.theme.scss';
 @import 'variables/dark.theme.scss';
 // tailwind
 @import 'tailwindcss/base';
@@ -15,10 +14,10 @@ body {
 }
 
 .cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
-  -webkit-backdrop-filter: blur(0.5rem);
-  backdrop-filter: blur(0.5rem);
+  -webkit-backdrop-filter: blur(1rem);
+  backdrop-filter: blur(1rem);
 
   &.dark-backdrop {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.6);
   }
 }

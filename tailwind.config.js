@@ -16,7 +16,7 @@ module.exports = {
       black: colors.black,
       white: colors.white,
 
-      gray: colors.blueGray,
+      gray: colors.coolGray,
 
       // brand colors
       brand: colors.yellow,
@@ -26,48 +26,45 @@ module.exports = {
       warning: colors.amber,
       info: colors.teal,
 
+      background: {
+        primary: 'var(--color-background-primary)',
+        secondary: 'var(--color-background-secondary)',
+        tertiary: 'var(--color-background-tertiary)'
+      },
+      label: {
+        primary: 'var(--color-label-primary)',
+        secondary: 'var(--color-label-secondary)',
+        tertiary: 'var(--color-label-tertiary)',
+        quaternary: 'var(--color-label-quaternary)'
+      },
+      fill: {
+        "1": 'var(--color-fill-1)',
+        "2": 'var(--color-fill-2)',
+        "3": 'var(--color-fill-3)',
+        "4": 'var(--color-fill-4)',
+        "5": 'var(--color-fill-5)',
+        "6": 'var(--color-fill-6)'
+      },
+
       primary: {
-        DEFAULT: 'var(--color-primary)',
-        soft: 'var(--color-primarySoft)',
-        bold: 'var(--color-primaryBold)',
-        'bg': {
-          DEFAULT: 'var(--color-primaryBg)',
-          soft: 'var(--color-primaryBgSoft)',
-          softer: 'var(--color-primaryBgSofter)',
-        },
         ...colors.blue
       },
-      neutral: {
-        DEFAULT: 'var(--color-neutral)',
-        soft: 'var(--color-neutralSoft)',
-        bold: 'var(--color-neutralBold)',
-        bg: {
-          DEFAULT: 'var(--color-neutralBg)',
-          soft: 'var(--color-neutralBgSoft)',
-          softer: 'var(--color-neutralBgSofter)',
+      tint: {
+        blue: {
+          soft: "var(--color-tint-blue-soft)",
+          DEFAULT: "var(--color-tint-blue)",
+          strong: "var(--color-tint-blue-strong)"
+        },
+        danger: {
+          soft: "var(--color-tint-danger-soft)",
+          DEFAULT: "var(--color-tint-danger)",
+          strong: "var(--color-tint-danger-strong)"
+        },
+        warning: {
+          soft: "var(--color-tint-warning-soft)",
+          DEFAULT: "var(--color-tint-warning)",
+          strong: "var(--color-tint-warning-strong)"
         }
-      },
-      on: {
-        'primary': {
-          DEFAULT: 'var(--color-onPrimary)',
-        },
-        'primary-bg': {
-          DEFAULT: 'var(--color-onPrimaryBg)',
-          soft: 'var(--color-onPrimaryBgSoft)',
-          softer: 'var(--color-onPrimaryBgSofter)',
-        },
-        'neutral': {
-          DEFAULT: 'var(--color-onNeutral)',
-        },
-        'neutral-bg': {
-          DEFAULT: 'var(--color-onNeutralBg)',
-          soft: 'var(--color-onNeutralBgSoft)',
-          softer: 'var(--color-onNeutralBgSofter)',
-        }
-      },
-      focus: {
-        DEFAULT: 'var(--color-focus)',
-        soft: 'var(--color-focus-soft)',
       }
 
     },
