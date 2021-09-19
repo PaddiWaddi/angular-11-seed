@@ -1,4 +1,5 @@
 import { OverlayModule } from '@angular/cdk/overlay';
+import { A11yModule } from '@angular/cdk/a11y';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -17,7 +18,7 @@ import { LoadingSpinnerComponent } from './components/loading-spinner/loading-sp
 import { PrefixDirective } from './directives/prefix.directive';
 import { SuffixDirective } from './directives/suffix.directive';
 
-const MODULES: any[] = [OverlayModule];
+const MODULES: any[] = [OverlayModule, A11yModule];
 
 const COMPONENTS = [
   ButtonComponent,

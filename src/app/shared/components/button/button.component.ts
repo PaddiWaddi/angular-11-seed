@@ -1,4 +1,12 @@
-import { Component, Input, ContentChild, ChangeDetectionStrategy, ChangeDetectorRef, HostBinding } from '@angular/core';
+import {
+  Component,
+  Input,
+  ContentChild,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  HostBinding,
+  HostListener,
+} from '@angular/core';
 import { SuffixDirective } from '@shared/directives/suffix.directive';
 import { PrefixDirective } from '@shared/directives/prefix.directive';
 import { faIcons, IconDefinition } from '@fortawesome/free-solid-svg-icons';
@@ -15,7 +23,7 @@ import { faIcons, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 export class ButtonComponent {
   /** Color scheme to use */
   @Input()
-  public color: 'regular' | 'primary' = 'regular';
+  public color: 'regular' | 'primary' | 'danger' = 'regular';
 
   /** Button style */
   @Input()
@@ -37,6 +45,25 @@ export class ButtonComponent {
   /** Icon prefix */
   @ContentChild(PrefixDirective)
   public prefix?: PrefixDirective;
+
+  /** True if focused */
+  public focused: boolean = false;
+
+  /**
+   * Handles blur of input
+   */
+  @HostListener('blur')
+  public onBlur(): void {
+    this.focused = false;
+  }
+
+  /**
+   * Handles focus of input
+   */
+  @HostListener('focus')
+  public onFocus(): void {
+    this.focused = true;
+  }
 
   /** Icon reference to use in template */
   public faIcons: IconDefinition = faIcons;

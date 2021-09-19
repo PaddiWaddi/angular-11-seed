@@ -30,11 +30,11 @@
     }
 
     #{$focused} & {
-      @apply ring-4 ring-tint-blue-soft bg-fill-5;
+      @apply ring-4 ring-tint-blue-soft border-tint-blue bg-fill-5;
     }
 
     #{$focused}#{$error} & {
-      @apply ring-tint-danger-soft border;
+      @apply ring-tint-danger-soft border-tint-danger;
     }
 
     #{$disabled} & {

@@ -1,8 +1,11 @@
 @import 'variables';
 
 :host {
-  @apply inline-block;
-  @apply focus:ring-2 focus-within:ring-brand-500;
+  &:active {
+    @apply scale-90;
+  }
+
+  @apply inline-block transition outline-none;
 }
 
 .app-button {
@@ -13,6 +16,7 @@
   $colorPrimary: #{&}--color-primary;
   $colorDanger: #{&}--color-danger;
 
+  $focused: #{&}--focused;
   $loading: #{&}--loading;
   $loadingError: #{&}--loading-error;
 
@@ -31,6 +35,10 @@
     @apply animate-shake-error;
   }
 
+  &#{$focused} {
+    @apply ring-4;
+  }
+
   /* FILLED STYLE */
   &#{$styleRegular} {
     &#{$colorRegular} {
@@ -38,8 +46,12 @@
         @apply opacity-25;
       }
 
-      @apply bg-fill-5 text-label-primary;
-      @apply hover:bg-fill-4 hover:text-label-primary;
+      &#{$focused} {
+        @apply bg-fill-5;
+      }
+
+      @apply bg-fill-6 text-label-primary;
+      @apply hover:bg-fill-5 hover:text-label-primary;
     }
 
     &#{$colorPrimary} {
@@ -47,8 +59,25 @@
         @apply opacity-25;
       }
 
-      @apply bg-tint-blue text-label-primary;
-      @apply hover:bg-tint-blue-soft hover:text-label-primary;
+      &#{$focused} {
+        @apply bg-tint-blue;
+      }
+
+      @apply bg-tint-blue-soft text-label-primary;
+      @apply hover:bg-tint-blue hover:text-label-primary;
+    }
+
+    &#{$colorDanger} {
+      &[disabled] {
+        @apply opacity-25;
+      }
+
+      &#{$focused} {
+        @apply bg-tint-danger ring-tint-danger-strong;
+      }
+
+      @apply bg-tint-danger-soft text-label-primary;
+      @apply hover:bg-tint-danger hover:text-label-primary;
     }
   }
 
@@ -59,7 +88,11 @@
         @apply opacity-25;
       }
 
-      @apply bg-transparent text-label-secondary;
+      &#{$focused} {
+        @apply bg-fill-5;
+      }
+
+      @apply bg-transparent text-label-primary;
       @apply hover:bg-fill-5 hover:text-label-primary;
     }
   }
@@ -98,6 +131,5 @@
 
   @apply after:absolute after:-top-s after:-left-s after:-right-s after:-bottom-s;
   @apply select-none animate-none relative flex justify-center transition-all  appearance-none outline-none;
-  @apply px-s py-xs rounded-md text-white ring-0 ring-brand-500;
-  @apply active:scale-95;
+  @apply px-s py-xs rounded-md text-white ring-0 ring-tint-blue-soft;
 }

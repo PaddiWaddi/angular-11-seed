@@ -51,32 +51,32 @@ export class FormInputComponent extends UnsubscribeDirective implements OnChange
 
   /** Bind CSS-class */
   @HostBinding('class.ck-form-input')
-  public defaultClass = true;
+  public defaultClass: boolean = true;
 
   /** Placeholder of input */
   @HostBinding('placeholder')
   @Input()
-  public placeholder = '';
+  public placeholder: string = '';
 
   /** Disabled status of input */
   @Input()
   @HostBinding('disabled')
-  public disabled = false;
+  public disabled: boolean = false;
 
   /** Required status of input */
   @Input()
   @HostBinding('required')
-  public required = false;
+  public required: boolean = false;
 
   /** Read-only status of input */
   @Input()
   @HostBinding('readonly')
-  public readonly = false;
+  public readonly: boolean = false;
 
   /** Id of the input */
   @Input()
   @HostBinding('id')
-  public id = `form-input-${uniqueId++}`;
+  public id: string = `form-input-${uniqueId++}`;
 
   /** True if focused */
   public focused: boolean = false;
