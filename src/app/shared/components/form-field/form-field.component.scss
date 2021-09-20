@@ -17,7 +17,7 @@
 
     #{$error} & {
       ::ng-deep label {
-        @apply text-label-danger;
+        @apply text-tint-danger-label;
       }
     }
 
@@ -39,7 +39,7 @@
     }
 
     #{$focused} & {
-      @apply ring-4 ring-tint-blue-4 border-tint-blue-2 bg-fill-5;
+      @apply ring-4 ring-tint-primary-4 border-tint-primary-2 bg-fill-5;
     }
 
     #{$focused}#{$error} & {

@@ -20,23 +20,34 @@
   --color-fill-6: rgb(var(--color-neutral-300), 0.1);
 
   // tint
-  --color-tint-blue-1: rgb(var(--color-primary-400), 1);
-  --color-tint-blue-2: rgb(var(--color-primary-500), 1);
-  --color-tint-blue-3: rgb(var(--color-primary-500), 0.8);
-  --color-tint-blue-4: rgb(var(--color-primary-500), 0.5);
-  --color-tint-blue-5: rgb(var(--color-primary-500), 0.4);
-  --color-label-blue: var(--color-tint-blue-1);
-  //
-  --color-tint-warning: var(--color-warning-500);
-  --color-tint-warning-soft: var(--color-warning-700);
-  --color-tint-warning-strong: var(--color-warning-200);
-  //
+  // primary
+  --color-tint-primary-1: rgb(var(--color-primary-400), 1);
+  --color-tint-primary-2: rgb(var(--color-primary-500), 1);
+  --color-tint-primary-3: rgb(var(--color-primary-500), 0.8);
+  --color-tint-primary-4: rgb(var(--color-primary-500), 0.5);
+  --color-tint-primary-5: rgb(var(--color-primary-500), 0.4);
+  --color-tint-primary-label: var(--color-tint-primary-1);
+  // warning
+  --color-tint-warning-1: rgb(var(--color-warning-400), 1);
+  --color-tint-warning-2: rgb(var(--color-warning-500), 1);
+  --color-tint-warning-3: rgb(var(--color-warning-500), 0.8);
+  --color-tint-warning-4: rgb(var(--color-warning-500), 0.5);
+  --color-tint-warning-5: rgb(var(--color-warning-500), 0.4);
+  --color-tint-warning-label: var(--color-tint-warning-1);
+  // danger
   --color-tint-danger-1: rgba(var(--color-danger-400), 1);
   --color-tint-danger-2: rgba(var(--color-danger-500), 1);
   --color-tint-danger-3: rgba(var(--color-danger-500), 0.8);
   --color-tint-danger-4: rgba(var(--color-danger-500), 0.5);
   --color-tint-danger-5: rgba(var(--color-danger-500), 0.4);
-  --color-label-danger: var(--color-tint-danger-1);
+  --color-tint-danger-label: var(--color-tint-danger-1);
+  // success
+  --color-tint-success-1: rgb(var(--color-success-400), 1);
+  --color-tint-success-2: rgb(var(--color-success-500), 1);
+  --color-tint-success-3: rgb(var(--color-success-500), 0.8);
+  --color-tint-success-4: rgb(var(--color-success-500), 0.5);
+  --color-tint-success-5: rgb(var(--color-success-500), 0.4);
+  --color-tint-success-label: var(--color-tint-success-1);
 }
 
 @media (prefers-color-scheme: dark) {

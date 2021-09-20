@@ -60,11 +60,11 @@
       }
 
       &#{$focused} {
-        @apply bg-tint-blue-2 ring-tint-blue-4;
+        @apply bg-tint-primary-2 ring-tint-primary-4;
       }
 
-      @apply bg-tint-blue-3 text-label-primary;
-      @apply hover:bg-tint-blue-2 hover:text-label-primary;
+      @apply bg-tint-primary-3 text-label-primary;
+      @apply hover:bg-tint-primary-2 hover:text-label-primary;
     }
 
     &#{$colorDanger} {
@@ -115,7 +115,7 @@
 
   &__content {
     #{$loading} & {
-      @apply opacity-0 scale-75;
+      // @apply opacity-0 scale-75;
     }
 
     @apply scale-100;
@@ -123,13 +123,13 @@
 
   &__loading {
     #{$loading} & {
-      @apply opacity-100 scale-100;
+      @apply opacity-100 w-s scale-100 mr-xs;
     }
 
-    @apply transition-all absolute flex justify-center items-center top-0 right-0 bottom-0 left-0 opacity-0 scale-150 pointer-events-none;
+    @apply transition-all w-0 flex justify-center items-center top-0 right-0 bottom-0 left-0 opacity-0 scale-150 pointer-events-none;
   }
 
   @apply after:absolute after:-top-s after:-left-s after:-right-s after:-bottom-s;
   @apply select-none animate-none relative flex justify-center transition-all  appearance-none outline-none;
-  @apply px-s py-xs rounded-md text-white ring-0 ring-tint-blue-3;
+  @apply px-s py-xs rounded-md ring-0 ring-tint-primary-3;
 }

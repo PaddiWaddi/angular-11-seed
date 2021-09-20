@@ -13,7 +13,7 @@ import { MessageDialogComponent } from '@shared/components/dialog/message-dialog
 export class DemoComponent implements OnInit {
   public icons: typeof icons = icons;
 
-  public loadingState: LoadingState = LoadingState.Rest;
+  public loadingState: LoadingState = LoadingState.Loading;
 
   constructor(private cdRef: ChangeDetectorRef, private dialogService: DialogService) {}
 

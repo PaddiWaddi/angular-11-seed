@@ -1,3 +1,4 @@
+const { Action } = require('rxjs/internal/scheduler/Action');
 const colors = require('tailwindcss/colors');
 const plugin = require('tailwindcss/plugin')
 
@@ -13,17 +14,6 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
-      black: colors.black,
-      white: colors.white,
-
-      // brand colors
-      brand: colors.yellow,
-      // signal colors
-      success: colors.green,
-      danger: colors.red,
-      warning: colors.amber,
-      info: colors.teal,
-
       background: {
         primary: 'var(--color-background-primary)',
         secondary: 'var(--color-background-secondary)',
@@ -34,8 +24,6 @@ module.exports = {
         secondary: 'var(--color-label-secondary)',
         tertiary: 'var(--color-label-tertiary)',
         quaternary: 'var(--color-label-quaternary)',
-
-        danger: 'var(--color-label-danger)'
       },
       fill: {
         "1": 'var(--color-fill-1)',
@@ -46,24 +34,37 @@ module.exports = {
         "6": 'var(--color-fill-6)'
       },
       tint: {
-        blue: {
-          1: "var(--color-tint-blue-1)",
-          2: "var(--color-tint-blue-2)",
-          3: "var(--color-tint-blue-3)",
-          4: "var(--color-tint-blue-4)",
-          5: "var(--color-tint-blue-5)"
+        primary: {
+          1: "var(--color-tint-primary-1)",
+          2: "var(--color-tint-primary-2)",
+          3: "var(--color-tint-primary-3)",
+          4: "var(--color-tint-primary-4)",
+          5: "var(--color-tint-primary-5)",
+          label: "var(--color-tint-primary-label)",
         },
         danger: {
           1: "var(--color-tint-danger-1)",
           2: "var(--color-tint-danger-2)",
           3: "var(--color-tint-danger-3)",
           4: "var(--color-tint-danger-4)",
-          5: "var(--color-tint-danger-5)"
+          5: "var(--color-tint-danger-5)",
+          label: "var(--color-tint-danger-label)",
         },
         warning: {
-          soft: "var(--color-tint-warning-soft)",
-          DEFAULT: "var(--color-tint-warning)",
-          strong: "var(--color-tint-warning-strong)"
+          1: "var(--color-tint-warning-1)",
+          2: "var(--color-tint-warning-2)",
+          3: "var(--color-tint-warning-3)",
+          4: "var(--color-tint-warning-4)",
+          5: "var(--color-tint-warning-5)",
+          label: "var(--color-tint-warning-label)",
+        },
+        success: {
+          1: "var(--color-tint-success-1)",
+          2: "var(--color-tint-success-2)",
+          3: "var(--color-tint-success-3)",
+          4: "var(--color-tint-success-4)",
+          5: "var(--color-tint-success-5)",
+          label: "var(--color-tint-success-label)",
         }
       }
 
