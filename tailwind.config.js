@@ -16,8 +16,6 @@ module.exports = {
       black: colors.black,
       white: colors.white,
 
-      gray: colors.coolGray,
-
       // brand colors
       brand: colors.yellow,
       // signal colors
@@ -35,7 +33,9 @@ module.exports = {
         primary: 'var(--color-label-primary)',
         secondary: 'var(--color-label-secondary)',
         tertiary: 'var(--color-label-tertiary)',
-        quaternary: 'var(--color-label-quaternary)'
+        quaternary: 'var(--color-label-quaternary)',
+
+        danger: 'var(--color-label-danger)'
       },
       fill: {
         "1": 'var(--color-fill-1)',
@@ -45,20 +45,20 @@ module.exports = {
         "5": 'var(--color-fill-5)',
         "6": 'var(--color-fill-6)'
       },
-
-      primary: {
-        ...colors.blue
-      },
       tint: {
         blue: {
-          soft: "var(--color-tint-blue-soft)",
-          DEFAULT: "var(--color-tint-blue)",
-          strong: "var(--color-tint-blue-strong)"
+          1: "var(--color-tint-blue-1)",
+          2: "var(--color-tint-blue-2)",
+          3: "var(--color-tint-blue-3)",
+          4: "var(--color-tint-blue-4)",
+          5: "var(--color-tint-blue-5)"
         },
         danger: {
-          soft: "var(--color-tint-danger-soft)",
-          DEFAULT: "var(--color-tint-danger)",
-          strong: "var(--color-tint-danger-strong)"
+          1: "var(--color-tint-danger-1)",
+          2: "var(--color-tint-danger-2)",
+          3: "var(--color-tint-danger-3)",
+          4: "var(--color-tint-danger-4)",
+          5: "var(--color-tint-danger-5)"
         },
         warning: {
           soft: "var(--color-tint-warning-soft)",

@@ -66,15 +66,21 @@
   --color-fill-6: rgba(var(--color-neutral-700), 0.1);
 
   // tint
-  --color-tint-blue-soft: rgb(var(--color-primary-300), 0.8);
-  --color-tint-blue: rgb(var(--color-primary-500), 0.8);
-  --color-tint-blue-strong: rgb(var(--color-primary-700), 0.8);
-  //
+  --color-tint-blue-1: rgb(var(--color-primary-800), 1);
+  --color-tint-blue-2: rgb(var(--color-primary-600), 1);
+  --color-tint-blue-3: rgb(var(--color-primary-500), 1);
+  --color-tint-blue-4: rgb(var(--color-primary-400), 1);
+  --color-tint-blue-5: rgb(var(--color-primary-300), 1);
+  --color-label-blue: var(--color-tint-blue-3);
+  // tint warning
   --color-tint-warning: var(--color-warning-500);
   --color-tint-warning-soft: var(--color-warning-200);
   --color-tint-warning-strong: var(--color-warning-700);
-  //
-  --color-tint-danger-soft: rgba(var(--color-danger-300), 0.8);
-  --color-tint-danger: rgba(var(--color-danger-500), 0.8);
-  --color-tint-danger-strong: rgba(var(--color-danger-700), 0.8);
+  // tint danger
+  --color-tint-danger-1: rgba(var(--color-danger-900), 1);
+  --color-tint-danger-2: rgba(var(--color-danger-700), 1);
+  --color-tint-danger-3: rgba(var(--color-danger-500), 1);
+  --color-tint-danger-4: rgba(var(--color-danger-400), 1);
+  --color-tint-danger-5: rgba(var(--color-danger-300), 1);
+  --color-label-danger: var(--color-tint-danger-3);
 }

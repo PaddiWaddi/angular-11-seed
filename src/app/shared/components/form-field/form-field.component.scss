@@ -11,13 +11,13 @@
     }
     #{$disabled} & {
       ::ng-deep label {
-        @apply opacity-25;
+        @apply opacity-40;
       }
     }
 
     #{$error} & {
       ::ng-deep label {
-        @apply text-tint-danger;
+        @apply text-label-danger;
       }
     }
 
@@ -25,25 +25,38 @@
   }
 
   &__box {
+    ::ng-deep [appSuffix],
+    ::ng-deep [appPrefix] {
+      #{$focused} & {
+        @apply text-label-primary;
+      }
+
+      @apply text-label-secondary transition;
+    }
+
     #{$error} & {
-      @apply border-tint-danger;
+      @apply border-tint-danger-3;
     }
 
     #{$focused} & {
-      @apply ring-4 ring-tint-blue-soft border-tint-blue bg-fill-5;
+      @apply ring-4 ring-tint-blue-4 border-tint-blue-2 bg-fill-5;
     }
 
     #{$focused}#{$error} & {
-      @apply ring-tint-danger-soft border-tint-danger;
+      @apply ring-tint-danger-4 border-tint-danger-2;
     }
 
     #{$disabled} & {
-      @apply opacity-25;
+      @apply opacity-40;
     }
 
     &-input {
       ::ng-deep [appFormInput] {
-        @apply placeholder-label-secondary bg-transparent w-full h-full;
+        #{$focused} & {
+          @apply text-label-primary;
+        }
+
+        @apply text-label-secondary placeholder-label-secondary transition bg-transparent w-full h-full;
       }
 
       @apply px-0 py-xxs flex-grow flex-shrink-0 flex;
@@ -54,7 +67,7 @@
 
   &__hints {
     #{$disabled} & {
-      @apply opacity-25;
+      @apply opacity-40;
     }
 
     @apply mt-xs mb-l;
