@@ -25,7 +25,7 @@ export class DemoComponent implements OnInit {
     setTimeout(() => {
       this.loadingState = LoadingState.Error;
       this.cdRef.markForCheck();
-    }, 1000);
+    }, 5000);
   }
 
   public open() {

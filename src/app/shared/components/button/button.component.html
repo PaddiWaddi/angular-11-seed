@@ -15,18 +15,18 @@
     <ng-content select="fa-icon[appPrefix]"></ng-content>
   </div>
 
+  <div class="app-button__loading">
+    <app-loading-spinner
+      class="app-button__loading-spinner"
+      [color]="color == 'danger' || color == 'primary' ? 'on-tint' : 'regular'"
+    ></app-loading-spinner>
+  </div>
+
   <div class="app-button__content">
     <ng-content></ng-content>
   </div>
 
   <div *ngIf="suffix" class="app-button__suffix">
     <ng-content select="fa-icon[appSuffix]"></ng-content>
-  </div>
-
-  <div class="app-button__loading">
-    <app-loading-spinner
-      class="app-button__loading-spinner"
-      [color]="color == 'primary' ? 'primary' : 'regular'"
-    ></app-loading-spinner>
   </div>
 </div>

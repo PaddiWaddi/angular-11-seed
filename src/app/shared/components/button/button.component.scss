@@ -63,8 +63,8 @@
         @apply bg-tint-primary-2 ring-tint-primary-4;
       }
 
-      @apply bg-tint-primary-3 text-label-primary;
-      @apply hover:bg-tint-primary-2 hover:text-label-primary;
+      @apply bg-tint-primary-3 text-label-on-tint;
+      @apply hover:bg-tint-primary-2;
     }
 
     &#{$colorDanger} {
@@ -76,8 +76,8 @@
         @apply bg-tint-danger-2 ring-tint-danger-4;
       }
 
-      @apply bg-tint-danger-3 text-label-primary;
-      @apply hover:bg-tint-danger-2 hover:text-label-primary;
+      @apply bg-tint-danger-3;
+      @apply hover:bg-tint-danger-2 text-label-on-tint;
     }
   }
 
@@ -131,5 +131,5 @@
 
   @apply after:absolute after:-top-s after:-left-s after:-right-s after:-bottom-s;
   @apply select-none animate-none relative flex justify-center transition-all  appearance-none outline-none;
-  @apply px-s py-xs rounded-md ring-0 ring-tint-primary-3;
+  @apply px-sm py-xs rounded-md ring-0 ring-tint-primary-3;
 }

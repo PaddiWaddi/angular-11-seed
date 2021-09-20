@@ -68,6 +68,7 @@
   --color-label-secondary: rgba(var(--color-neutral-600), 0.9);
   --color-label-tertiary: rgba(var(--color-neutral-800), 0.5);
   --color-label-quaternary: rgba(var(--color-neutral-800), 0.3);
+  --color-label-on-tint: rgba(var(--color-neutral-50), 1);
 
   // fill
   --color-fill-1: rgba(var(--color-neutral-700), 0.6);
@@ -79,29 +80,29 @@
 
   // tint
   --color-tint-primary-1: rgb(var(--color-primary-800), 1);
-  --color-tint-primary-2: rgb(var(--color-primary-600), 1);
-  --color-tint-primary-3: rgb(var(--color-primary-500), 1);
+  --color-tint-primary-2: rgb(var(--color-primary-700), 1);
+  --color-tint-primary-3: rgb(var(--color-primary-600), 1);
   --color-tint-primary-4: rgb(var(--color-primary-400), 1);
   --color-tint-primary-5: rgb(var(--color-primary-300), 1);
   --color-tint-primary-label: var(--color-tint-primary-2);
   // tint warning
   --color-tint-warning-1: rgb(var(--color-warning-800), 1);
-  --color-tint-warning-2: rgb(var(--color-warning-600), 1);
-  --color-tint-warning-3: rgb(var(--color-warning-500), 1);
+  --color-tint-warning-2: rgb(var(--color-warning-700), 1);
+  --color-tint-warning-3: rgb(var(--color-warning-600), 1);
   --color-tint-warning-4: rgb(var(--color-warning-300), 1);
   --color-tint-warning-5: rgb(var(--color-warning-200), 1);
   --color-tint-warning-label: var(--color-tint-warning-2);
   // tint danger
   --color-tint-danger-1: rgba(var(--color-danger-900), 1);
   --color-tint-danger-2: rgba(var(--color-danger-700), 1);
-  --color-tint-danger-3: rgba(var(--color-danger-500), 1);
+  --color-tint-danger-3: rgba(var(--color-danger-600), 1);
   --color-tint-danger-4: rgba(var(--color-danger-400), 1);
   --color-tint-danger-5: rgba(var(--color-danger-300), 1);
   --color-tint-danger-label: var(--color-tint-danger-3);
   // tint success
   --color-tint-success-1: rgba(var(--color-success-800), 1);
-  --color-tint-success-2: rgba(var(--color-success-600), 1);
-  --color-tint-success-3: rgba(var(--color-success-500), 1);
+  --color-tint-success-2: rgba(var(--color-success-700), 1);
+  --color-tint-success-3: rgba(var(--color-success-600), 1);
   --color-tint-success-4: rgba(var(--color-success-400), 1);
   --color-tint-success-5: rgba(var(--color-success-300), 1);
   --color-tint-success-label: var(--color-tint-success-2);

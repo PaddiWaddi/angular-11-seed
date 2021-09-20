@@ -24,6 +24,7 @@ module.exports = {
         secondary: 'var(--color-label-secondary)',
         tertiary: 'var(--color-label-tertiary)',
         quaternary: 'var(--color-label-quaternary)',
+        'on-tint': 'var(--color-label-on-tint)'
       },
       fill: {
         "1": 'var(--color-fill-1)',
@@ -77,6 +78,7 @@ module.exports = {
       xxs: '0.25rem',
       xs: '0.5rem',
       s: '0.75rem',
+      sm: '1rem',
       m: '1.75rem',
       l: '2rem',
       xl: '3rem',
