@@ -115,7 +115,7 @@
 
   &__content {
     #{$loading} & {
-      // @apply opacity-0 scale-75;
+      @apply opacity-0 scale-75;
     }
 
     @apply scale-100;
@@ -123,10 +123,10 @@
 
   &__loading {
     #{$loading} & {
-      @apply opacity-100 w-s scale-100 mr-xs;
+      @apply opacity-100 scale-100;
     }
 
-    @apply transition-all w-0 flex justify-center items-center top-0 right-0 bottom-0 left-0 opacity-0 scale-150 pointer-events-none;
+    @apply transition-all absolute flex justify-center items-center top-0 right-0 bottom-0 left-0 opacity-0 scale-150 pointer-events-none;
   }
 
   @apply after:absolute after:-top-s after:-left-s after:-right-s after:-bottom-s;
