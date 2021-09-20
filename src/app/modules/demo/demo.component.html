@@ -16,17 +16,13 @@
   </div>
 
   <div class="space-x-gutter p-l rounded-lg bg-background-tertiary flex">
-    <button app-button [color]="'primary'">
-      <fa-icon appPrefix [icon]="icons.faAd"></fa-icon>Primary <fa-icon appSuffix [icon]="icons.faAd"></fa-icon>
-    </button>
+    <button app-button [color]="'primary'">Primary</button>
     <button app-button [color]="'primary'" [loadingStatus]="loadingState" (click)="buttonClick()">Loading</button>
     <button app-button [color]="'primary'" [disabled]="true">disabled</button>
   </div>
 
   <div class="space-x-gutter p-l rounded-lg bg-background-tertiary flex">
-    <button app-button [color]="'danger'">
-      <fa-icon appPrefix [icon]="icons.faAd"></fa-icon>Danger <fa-icon appSuffix [icon]="icons.faAd"></fa-icon>
-    </button>
+    <button app-button [color]="'danger'">Danger <fa-icon appSuffix [icon]="icons.faTrash"></fa-icon></button>
     <button app-button [color]="'danger'" [loadingStatus]="loadingState" (click)="buttonClick()">Loading</button>
     <button app-button [color]="'danger'" [disabled]="true">disabled</button>
   </div>
@@ -37,7 +33,7 @@
     <div class="space-x-gutter">
       <app-form-field>
         <app-label> Testfeld </app-label>
-        <fa-icon appPrefix [icon]="icons.faAd"></fa-icon>
+
         <input appFormInput type="password" [value]="'test'" autocomplete="current-password" />
         <span appSuffix>mm</span>
         <fa-icon appSuffix [icon]="icons.faLock"></fa-icon>
