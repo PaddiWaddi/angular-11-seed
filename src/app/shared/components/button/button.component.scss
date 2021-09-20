@@ -99,26 +99,26 @@
 
   &__prefix {
     #{$loading} & {
-      @apply opacity-0;
+      @apply opacity-40 scale-90;
     }
 
-    @apply mr-xs inline-flex align-middle transition-opacity;
+    @apply mr-xs inline-flex align-middle transition-transform;
   }
 
   &__suffix {
     #{$loading} & {
-      @apply opacity-0;
+      @apply opacity-40 scale-90;
     }
 
-    @apply ml-xs inline-flex align-middle transition-opacity;
+    @apply ml-xs inline-flex align-middle transition-transform;
   }
 
   &__content {
     #{$loading} & {
-      @apply opacity-0 scale-75;
+      @apply opacity-40 scale-90;
     }
 
-    @apply scale-100;
+    @apply scale-100 transition-transform;
   }
 
   &__loading {

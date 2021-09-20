@@ -11,7 +11,9 @@
       <fa-icon appPrefix [icon]="icons.faAddressBook"></fa-icon> Filled
       <fa-icon appSuffix [icon]="icons.faPlaceOfWorship"></fa-icon>
     </button>
-    <button app-button [loadingStatus]="loadingState" (click)="buttonClick()">Loading</button>
+    <button app-button [loadingStatus]="loadingState" (click)="buttonClick()">
+      <fa-icon appPrefix [icon]="icons.faAddressBook"></fa-icon> Loading
+    </button>
     <button app-button [disabled]="true">disabled</button>
   </div>
 
