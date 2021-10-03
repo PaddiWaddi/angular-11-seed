@@ -29,6 +29,10 @@ export class ButtonComponent {
   @Input()
   public style: 'regular' | 'text' = 'regular';
 
+  /** Button Size */
+  @Input()
+  public size: 's' | 'm' | 'l' = 'm';
+
   /** Wether the button can be clicked */
   @HostBinding('class.pointer-events-none')
   @Input()

@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+import { AlertComponent } from './components/alert/alert.component';
 import { ButtonComponent } from './components/button/button.component';
 import { DialogService } from './components/dialog/dialog.service';
 import { MessageDialogComponent } from './components/dialog/message-dialog/message-dialog.component';
@@ -21,6 +22,7 @@ import { SuffixDirective } from './directives/suffix.directive';
 const MODULES: any[] = [OverlayModule, A11yModule];
 
 const COMPONENTS = [
+  AlertComponent,
   ButtonComponent,
   ErrorComponent,
   FormFieldComponent,

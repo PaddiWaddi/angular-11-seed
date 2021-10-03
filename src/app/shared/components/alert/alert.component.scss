@@ -1,0 +1,21 @@
+:host {
+  display: block;
+}
+
+.app-alert {
+  &--danger {
+    @apply bg-tint-danger-3;
+  }
+
+  &--success {
+    @apply bg-tint-success-3;
+  }
+
+  &--warning {
+    @apply bg-tint-warning-3;
+  }
+
+  &--primary {
+    @apply bg-tint-primary-3;
+  }
+}
