@@ -1,9 +1,11 @@
 <div class="space-y-s md:w-1/2">
   <h1 class="text-lg">Buttons</h1>
   <div class="space-x-gutter p-l rounded-lg bg-background-tertiary flex">
-    <button app-button [style]="'text'">Text</button>
-    <button app-button [style]="'text'" [loadingStatus]="loadingState" (click)="buttonClick()">Loading</button>
-    <button app-button [style]="'text'" [disabled]="true">disabled</button>
+    <button app-button [style]="ButtonStyle.TextNeutral">Text</button>
+    <button app-button [style]="ButtonStyle.TextNeutral" [loadingStatus]="loadingState" (click)="buttonClick()">
+      Loading
+    </button>
+    <button app-button [style]="ButtonStyle.TextNeutral" [disabled]="true">disabled</button>
   </div>
 
   <div class="space-x-gutter p-l rounded-lg bg-background-tertiary flex">
@@ -18,15 +20,21 @@
   </div>
 
   <div class="space-x-gutter p-l rounded-lg bg-background-tertiary flex">
-    <button app-button [color]="'primary'">Primary</button>
-    <button app-button [color]="'primary'" [loadingStatus]="loadingState" (click)="buttonClick()">Loading</button>
-    <button app-button [color]="'primary'" [disabled]="true">disabled</button>
+    <button app-button [style]="ButtonStyle.FilledPrimary">Primary</button>
+    <button app-button [style]="ButtonStyle.FilledPrimary" [loadingStatus]="loadingState" (click)="buttonClick()">
+      Loading
+    </button>
+    <button app-button [style]="ButtonStyle.FilledPrimary" [disabled]="true">disabled</button>
   </div>
 
   <div class="space-x-gutter p-l rounded-lg bg-background-tertiary flex">
-    <button app-button [color]="'danger'">Danger <fa-icon appSuffix [icon]="icons.faTrash"></fa-icon></button>
-    <button app-button [color]="'danger'" [loadingStatus]="loadingState" (click)="buttonClick()">Loading</button>
-    <button app-button [color]="'danger'" [disabled]="true">disabled</button>
+    <button app-button [style]="ButtonStyle.FilledDanger">
+      Danger <fa-icon appSuffix [icon]="icons.faTrash"></fa-icon>
+    </button>
+    <button app-button [style]="ButtonStyle.FilledDanger" [loadingStatus]="loadingState" (click)="buttonClick()">
+      Loading
+    </button>
+    <button app-button [style]="ButtonStyle.FilledDanger" [disabled]="true">disabled</button>
   </div>
 </div>
 
@@ -59,33 +67,27 @@
       </app-form-field>
     </div>
     <div class="flex justify-end space-x-m">
-      <button tabindex="0" [style]="'text'" type="submit" app-button>abbrechen</button>
-      <button tabindex="0" [color]="'regular'" app-button>abbrechen</button>
-      <button tabindex="0" [color]="'primary'" app-button (click)="open()">speichern</button>
+      <button tabindex="0" [style]="ButtonStyle.TextNeutral" type="submit" app-button>abbrechen</button>
+      <button tabindex="0" app-button>abbrechen</button>
+      <button tabindex="0" [style]="ButtonStyle.FilledPrimary" app-button (click)="open()">speichern</button>
     </div>
   </div>
 </div>
 
 <div class="space-y-gutter mt-gutter">
-  <app-alert> </app-alert>
+  <app-alert>
+    <div class="flex justify-between items-center">Test Message <button tabindex="0" app-button>OK</button></div>
+  </app-alert>
   <app-alert [style]="'danger'">
-    <div class="flex justify-between items-center">
-      Test Message <button tabindex="0" [color]="'regular'" app-button>OK</button>
-    </div>
+    <div class="flex justify-between items-center">Test Message <button tabindex="0" app-button>OK</button></div>
   </app-alert>
   <app-alert [style]="'warning'">
-    <div class="flex justify-between items-center">
-      Test Message <button tabindex="0" [color]="'regular'" app-button>OK</button>
-    </div>
+    <div class="flex justify-between items-center">Test Message <button tabindex="0" app-button>OK</button></div>
   </app-alert>
   <app-alert [style]="'success'">
-    <div class="flex justify-between items-center">
-      Test Message <button tabindex="0" [color]="'regular'" app-button>OK</button>
-    </div>
+    <div class="flex justify-between items-center">Test Message <button tabindex="0" app-button>OK</button></div>
   </app-alert>
   <app-alert [style]="'primary'">
-    <div class="flex justify-between items-center">
-      Test Message <button tabindex="0" [color]="'regular'" app-button>OK</button>
-    </div>
+    <div class="flex justify-between items-center">Test Message <button tabindex="0" app-button>OK</button></div>
   </app-alert>
 </div>

@@ -9,12 +9,10 @@
 }
 
 .app-button {
-  $styleRegular: #{&}--style-regular;
-  $styleText: #{&}--style-text;
-
-  $colorRegular: #{&}--color-regular;
-  $colorPrimary: #{&}--color-primary;
-  $colorDanger: #{&}--color-danger;
+  $styleFilledPrimary: #{&}--style-filled-primary;
+  $styleFilledNeutral: #{&}--style-filled-neutral;
+  $styleFilledDanger: #{&}--style-filled-danger;
+  $styleTextNeutral: #{&}--style-text-primary;
 
   $focused: #{&}--focused;
   $loading: #{&}--loading;
@@ -40,61 +38,57 @@
   }
 
   /* FILLED STYLE */
-  &#{$styleRegular} {
-    &#{$colorRegular} {
-      &[disabled] {
-        @apply opacity-25;
-      }
-
-      &#{$focused} {
-        @apply bg-fill-5;
-      }
-
-      @apply bg-fill-2 text-label-on-tint;
-      @apply hover:bg-fill-3;
+  &#{$styleFilledNeutral} {
+    &[disabled] {
+      @apply opacity-25;
     }
 
-    &#{$colorPrimary} {
-      &[disabled] {
-        @apply opacity-25;
-      }
-
-      &#{$focused} {
-        @apply bg-tint-primary-2 ring-tint-primary-4;
-      }
-
-      @apply bg-tint-primary-3 text-label-on-tint;
-      @apply hover:bg-tint-primary-2;
+    &#{$focused} {
+      @apply bg-fill-5;
     }
 
-    &#{$colorDanger} {
-      &[disabled] {
-        @apply opacity-25;
-      }
+    @apply bg-fill-2 text-label-on-tint;
+    @apply hover:bg-fill-3;
+  }
 
-      &#{$focused} {
-        @apply bg-tint-danger-2 ring-tint-danger-4;
-      }
-
-      @apply bg-tint-danger-3;
-      @apply hover:bg-tint-danger-2 text-label-on-tint;
+  &#{$styleFilledPrimary} {
+    &[disabled] {
+      @apply opacity-25;
     }
+
+    &#{$focused} {
+      @apply bg-tint-primary-2 ring-tint-primary-4;
+    }
+
+    @apply bg-tint-primary-3 text-label-on-tint;
+    @apply hover:bg-tint-primary-2;
+  }
+
+  &#{$styleFilledDanger} {
+    &[disabled] {
+      @apply opacity-25;
+    }
+
+    &#{$focused} {
+      @apply bg-tint-danger-2 ring-tint-danger-4;
+    }
+
+    @apply bg-tint-danger-3;
+    @apply hover:bg-tint-danger-2 text-label-on-tint;
   }
 
   /* TEXT STYLE */
-  &#{$styleText} {
-    &#{$colorRegular} {
-      &[disabled] {
-        @apply opacity-25;
-      }
-
-      &#{$focused} {
-        @apply bg-fill-5;
-      }
-
-      @apply bg-transparent text-label-primary;
-      @apply hover:bg-fill-5 hover:text-label-primary;
+  &#{$styleTextNeutral} {
+    &[disabled] {
+      @apply opacity-25;
     }
+
+    &#{$focused} {
+      @apply bg-fill-5;
+    }
+
+    @apply bg-transparent text-label-primary;
+    @apply hover:bg-fill-5 hover:text-label-primary;
   }
 
   &__prefix {

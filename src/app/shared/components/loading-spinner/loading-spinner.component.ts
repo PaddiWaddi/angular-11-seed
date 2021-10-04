@@ -1,5 +1,7 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
+export type LoadingSpinnerColor = 'primary' | 'regular' | 'on-tint';
+
 @Component({
   selector: 'app-loading-spinner',
   templateUrl: './loading-spinner.component.html',
@@ -8,5 +10,5 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 })
 export class LoadingSpinnerComponent {
   /** Color for the spinner */
-  @Input() public color: 'primary' | 'regular' | 'on-tint' = 'regular';
+  @Input() public color: LoadingSpinnerColor = 'regular';
 }

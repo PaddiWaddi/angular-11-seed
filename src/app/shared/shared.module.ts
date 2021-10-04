@@ -6,7 +6,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AlertComponent } from './components/alert/alert.component';
 import { ButtonComponent } from './components/button/button.component';
-import { DialogService } from './components/dialog/dialog.service';
+import { OverlayService } from './components/dialog/overlay.service';
 import { MessageDialogComponent } from './components/dialog/message-dialog/message-dialog.component';
 import { OverlayComponent } from './components/dialog/overlay.component';
 import { ErrorComponent } from './components/error/error.component';
@@ -46,7 +46,7 @@ const DIRECTIVES = [PrefixDirective, SuffixDirective];
 @NgModule({
   declarations: [...COMPONENTS, ...DIRECTIVES],
   imports: [CommonModule, FontAwesomeModule, ...MODULES],
-  providers: [DialogService],
+  providers: [OverlayService],
   exports: [...MODULES, ...COMPONENTS, ...DIRECTIVES],
 })
 export class SharedModule {}

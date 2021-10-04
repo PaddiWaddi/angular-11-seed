@@ -1,8 +1,12 @@
 import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import * as icons from '@fortawesome/free-solid-svg-icons';
-import { LoadingState } from '@shared/components/button/button.component';
-import { DialogService } from '@shared/components/dialog/dialog.service';
-import { MessageDialogComponent } from '@shared/components/dialog/message-dialog/message-dialog.component';
+import { ButtonStyle, LoadingState } from '@shared/components/button/button.component';
+import { OverlayService } from '@shared/components/dialog/overlay.service';
+import {
+  ActionType,
+  IDialogOptions,
+  MessageDialogComponent,
+} from '@shared/components/dialog/message-dialog/message-dialog.component';
 
 @Component({
   selector: 'app-demo',
@@ -15,7 +19,11 @@ export class DemoComponent implements OnInit {
 
   public loadingState: LoadingState = LoadingState.Loading;
 
-  constructor(private cdRef: ChangeDetectorRef, private dialogService: DialogService) {}
+  // TEMPLATE REFERENCES
+  /** ButtonStyle to use in template */
+  public ButtonStyle: typeof ButtonStyle = ButtonStyle;
+
+  constructor(private cdRef: ChangeDetectorRef, private OverlayService: OverlayService) {}
 
   ngOnInit(): void {}
 
@@ -29,6 +37,21 @@ export class DemoComponent implements OnInit {
   }
 
   public open() {
-    this.dialogService.open(MessageDialogComponent, '');
+    this.OverlayService.open<any, IDialogOptions>(MessageDialogComponent, {
+      title: 'Löschen',
+      message: 'Möchten Sie das wirklich löschen?',
+      actions: [
+        {
+          content: 'abbrechen',
+          action: ActionType.Cancel,
+        },
+        {
+          content: 'löschen',
+          action: ActionType.Primary,
+          icon: this.icons.faTrash,
+          style: ButtonStyle.FilledDanger,
+        },
+      ],
+    });
   }
 }

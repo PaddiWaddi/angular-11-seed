@@ -1,6 +1,6 @@
 import { Component, OnInit, TemplateRef, Type } from '@angular/core';
 import { faTimes, IconDefinition } from '@fortawesome/free-solid-svg-icons';
-import { DialogRef } from './dialog-ref';
+import { OverlayData } from './overlay-ref';
 
 @Component({
   selector: 'app-overlay',
@@ -16,7 +16,7 @@ export class OverlayComponent implements OnInit {
   public contentString: string | null = null;
   public context: any = {};
 
-  constructor(private ref: DialogRef) {}
+  constructor(private ref: OverlayData) {}
 
   public close(): void {
     this.ref.close(null);

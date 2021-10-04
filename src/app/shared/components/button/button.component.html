@@ -1,11 +1,10 @@
 <div
   class="app-button"
   [class.app-button--focused]="focused"
-  [class.app-button--style-regular]="style === 'regular'"
-  [class.app-button--style-text]="style === 'text'"
-  [class.app-button--color-regular]="color === 'regular'"
-  [class.app-button--color-primary]="color === 'primary'"
-  [class.app-button--color-danger]="color === 'danger'"
+  [class.app-button--style-filled-primary]="style === ButtonStyle.FilledPrimary"
+  [class.app-button--style-filled-neutral]="style === ButtonStyle.FilledNeutral"
+  [class.app-button--style-filled-danger]="style === ButtonStyle.FilledDanger"
+  [class.app-button--style-text-neutral]="style === ButtonStyle.TextNeutral"
   [class.app-button--loading]="loadingStatus === 'loading'"
   [class.app-button--loading-error]="loadingStatus === 'error'"
   [class.app-button--loading-success]="loadingStatus === 'success'"
@@ -18,7 +17,11 @@
   <div class="app-button__loading">
     <app-loading-spinner
       class="app-button__loading-spinner"
-      [color]="color == 'danger' || color == 'primary' ? 'on-tint' : 'regular'"
+      [color]="
+        style == ButtonStyle.FilledDanger || style == ButtonStyle.FilledPrimary || style == ButtonStyle.FilledNeutral
+          ? 'on-tint'
+          : 'regular'
+      "
     ></app-loading-spinner>
   </div>
 
