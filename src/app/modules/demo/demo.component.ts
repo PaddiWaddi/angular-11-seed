@@ -43,11 +43,11 @@ export class DemoComponent implements OnInit {
       actions: [
         {
           content: 'abbrechen',
-          action: ActionType.Cancel,
+          type: ActionType.Cancel,
         },
         {
           content: 'löschen',
-          action: ActionType.Primary,
+          type: ActionType.Primary,
           icon: this.icons.faTrash,
           style: ButtonStyle.FilledDanger,
         },

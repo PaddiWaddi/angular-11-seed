@@ -4,10 +4,11 @@
 
   <div class="flex space-x-s">
     <button
-      app-button
-      [style]="action.style || ButtonStyle.FilledNeutral"
-      *ngFor="let action of ref.data.actions"
       class="flex-grow w-0"
+      app-button
+      *ngFor="let action of ref.data.actions"
+      [style]="action.style || ButtonStyle.FilledNeutral"
+      (click)="onAction(action)"
     >
       <fa-icon [icon]="action.icon" *ngIf="action.icon"></fa-icon>
       {{ action.content }}
