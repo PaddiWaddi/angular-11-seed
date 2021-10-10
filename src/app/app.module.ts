@@ -1,6 +1,8 @@
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { HttpLoggingInterceptor } from '@core/interceptors/http-logging.interceptor';
 import { Logger } from '@core/utility-services/logger.service';
 import { MessageDialogComponent } from '@shared/components/dialog/message-dialog/message-dialog.component';
@@ -13,7 +15,7 @@ export const httpInterceptorProviders = [{ provide: HTTP_INTERCEPTORS, useClass:
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule],
   bootstrap: [AppComponent],
   providers: [httpInterceptorProviders, Logger],
   entryComponents: [OverlayComponent, MessageDialogComponent],

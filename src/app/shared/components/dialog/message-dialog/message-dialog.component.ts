@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
+import { animate, state, style, transition, trigger } from '@angular/animations';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding } from '@angular/core';
 import { ButtonStyle, LoadingState } from '@shared/components/button/button.component';
 import { Subject } from 'rxjs';
 import { ActionType, DialogEvent, IDialogAction, IDialogOptions, IDialogData } from '../dialog.service';
@@ -12,6 +13,26 @@ import { OverlayData } from '../overlay-ref';
   templateUrl: './message-dialog.component.html',
   styleUrls: ['./message-dialog.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  animations: [
+    trigger('animateHost', [
+      transition(':enter', [animate('200ms ease-out')]),
+      transition(':leave', [animate('200ms ease-in')]),
+      state(
+        'void',
+        style({
+          opacity: 0,
+          transform: 'translateY(50px) scale(0.9)',
+        })
+      ),
+      state(
+        '*',
+        style({
+          opacity: 1,
+          transform: 'translateY(0) scale(1)',
+        })
+      ),
+    ]),
+  ],
 })
 export class MessageDialogComponent {
   /** Emits dialog events */
@@ -19,6 +40,9 @@ export class MessageDialogComponent {
 
   /** Options to display */
   public options: IDialogOptions | null = null;
+
+  /** Add entry animation */
+  @HostBinding('@animateHost') animate: boolean = true;
 
   // TEMPLATE REFERENCES
   /** ButtonStyle to use in template */
