@@ -19,6 +19,11 @@
 </div>
 
 <!-- You can also add a global close button -->
-<button (click)="close()" class="fixed top-gutter right-gutter p-m text-label-primary" aria-label="close">
+<button
+  *ngIf="backdropClose"
+  (click)="close()"
+  class="fixed top-gutter right-gutter p-m text-label-primary"
+  aria-label="close"
+>
   <fa-icon [icon]="closeIcon"></fa-icon>
 </button>

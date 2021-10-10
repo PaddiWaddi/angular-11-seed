@@ -1,66 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { IconDefinition } from '@fortawesome/fontawesome-common-types';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { ButtonStyle, LoadingState } from '@shared/components/button/button.component';
-import { Action } from 'rxjs/internal/scheduler/Action';
+import { Subject } from 'rxjs';
+import { ActionType, DialogEvent, IDialogAction, IDialogOptions, IDialogData } from '../dialog.service';
 import { OverlayData } from '../overlay-ref';
-
-/**
- * Dialog Options
- */
-export interface IDialogOptions {
-  /** Title of the message */
-  title: string;
-  /** Message content */
-  message: string;
-  /** List of buttons to display */
-  actions: IDialogAction[];
-}
-
-export interface IDialogAction {
-  /** Button Content */
-  content: string;
-  /** Button Style */
-  style?: ButtonStyle;
-  /** Leading Icon */
-  icon?: IconDefinition;
-  /** Action to return */
-  type: ActionType;
-}
-
-/**
- * Types of a dialog action
- */
-export enum ActionType {
-  /** Cancels the action and closes the dialog synchronously */
-  Cancel,
-  /** Primary async action */
-  Primary,
-  /** Secondary async action */
-  Secondary,
-  /** Tertiary async action */
-  Tertiary,
-  /** Quaternary async action */
-  Quaternary,
-}
-
-/**
- * An event that is raised by a dialog action
- */
-class DialogEvent {
-  /**
-   *
-   * @param type Type of the action
-   * @param action Action that was activated
-   * @param continueDialog Continues the dialog and shows the given message to the user
-   * @param dismissDialog Dismisses the dialog
-   */
-  constructor(
-    public readonly type: ActionType,
-    public readonly action: IDialogAction,
-    public readonly continueDialog: (message?: string, response?: LoadingState.Error | LoadingState.Success) => void,
-    public readonly dismissDialog: () => void
-  ) {}
-}
 
 /**
  * A simple dialog displaying a message and a couple of buttons.
@@ -69,43 +11,66 @@ class DialogEvent {
   selector: 'app-subscribe',
   templateUrl: './message-dialog.component.html',
   styleUrls: ['./message-dialog.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MessageDialogComponent {
+  /** Emits dialog events */
+  private eventSubject: Subject<DialogEvent> = new Subject<DialogEvent>();
+
+  /** Options to display */
+  public options: IDialogOptions | null = null;
+
   // TEMPLATE REFERENCES
   /** ButtonStyle to use in template */
   public ButtonStyle: typeof ButtonStyle = ButtonStyle;
   /** Current Loading state */
-  public loading: LoadingState = LoadingState.Rest;
+  public LoadingState: typeof LoadingState = LoadingState;
   /** Currently activated button */
   public activatedAction: IDialogAction | null = null;
 
   /** Activated Button */
-  constructor(public ref: OverlayData<DialogEvent, IDialogOptions>) {}
+  constructor(public ref: OverlayData<undefined, IDialogData>, private cdRef: ChangeDetectorRef) {
+    this.eventSubject = ref.data.subject;
+    this.options = ref.data.options;
+  }
 
   /**
-   * Perform action that was pressed by user
+   * On button click, emits an event with the given action.
+   * The Cancel event automatically closes the dialog
    */
   public onAction(action: IDialogAction): void {
+    if (this.activatedAction) {
+      return;
+    }
+    this.activatedAction = action;
+    action.state = LoadingState.Loading;
+
+    this.cdRef.markForCheck();
+
+    this.eventSubject.next(
+      new DialogEvent(action.type, { ...action }, this.continueDialog.bind(this), this.dismissDialog.bind(this))
+    );
+
     if (action.type === ActionType.Cancel) {
       this.ref.close(null);
       return;
     }
-
-    this.activatedAction = action;
-
-    this.ref.close(new DialogEvent(action.type, action, this.continueDialog, this.dismissDialog));
   }
 
   /**
    * Continue the dialog and optionally show the given message
-   * @param message
-   * @param state
+   * @param message message to display, e.g. error
+   * @param state button state to show
    */
-  public continueDialog(message?: string, state?: LoadingState): void {
+  public continueDialog(message?: string, state?: LoadingState.Rest | LoadingState.Error | LoadingState.Success): void {
+    this.activatedAction!.state = state;
     this.activatedAction = null;
-    this.loading = state || LoadingState.Rest;
+    this.cdRef.markForCheck();
   }
 
+  /**
+   * Dismiss the dialog.
+   */
   public dismissDialog(): void {
     this.ref.close(null);
   }

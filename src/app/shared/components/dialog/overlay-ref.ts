@@ -16,9 +16,14 @@ export class OverlayData<R = any, T = any> {
   constructor(
     public overlay: OverlayRef,
     public content: string | Type<any> | TemplateRef<any> | null,
-    public data: T // pass data to modal i.e. FormData
+    public data: T, // pass data to modal i.e. FormData
+    public backdropClose: boolean = false
   ) {
-    overlay.backdropClick().subscribe(() => this._close('backdropClick', null));
+    overlay.backdropClick().subscribe(() => {
+      if (backdropClose) {
+        this._close('backdropClick', null);
+      }
+    });
   }
 
   public close(data: R | null): void {

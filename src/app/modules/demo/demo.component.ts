@@ -1,12 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import * as icons from '@fortawesome/free-solid-svg-icons';
 import { ButtonStyle, LoadingState } from '@shared/components/button/button.component';
-import { OverlayService } from '@shared/components/dialog/overlay.service';
-import {
-  ActionType,
-  IDialogOptions,
-  MessageDialogComponent,
-} from '@shared/components/dialog/message-dialog/message-dialog.component';
+import { ActionType, DialogService } from '@shared/components/dialog/dialog.service';
 
 @Component({
   selector: 'app-demo',
@@ -23,7 +18,7 @@ export class DemoComponent implements OnInit {
   /** ButtonStyle to use in template */
   public ButtonStyle: typeof ButtonStyle = ButtonStyle;
 
-  constructor(private cdRef: ChangeDetectorRef, private OverlayService: OverlayService) {}
+  constructor(private cdRef: ChangeDetectorRef, private dialogService: DialogService) {}
 
   ngOnInit(): void {}
 
@@ -37,21 +32,31 @@ export class DemoComponent implements OnInit {
   }
 
   public open() {
-    this.OverlayService.open<any, IDialogOptions>(MessageDialogComponent, {
-      title: 'Löschen',
-      message: 'Möchten Sie das wirklich löschen?',
-      actions: [
-        {
-          content: 'abbrechen',
-          type: ActionType.Cancel,
-        },
-        {
-          content: 'löschen',
-          type: ActionType.Primary,
-          icon: this.icons.faTrash,
-          style: ButtonStyle.FilledDanger,
-        },
-      ],
-    });
+    this.dialogService
+      .open({
+        title: 'Löschen',
+        message: 'Möchten Sie das wirklich löschen?',
+        actions: [
+          {
+            content: 'abbrechen',
+            type: ActionType.Cancel,
+          },
+          {
+            content: 'löschen',
+            type: ActionType.Primary,
+            icon: this.icons.faTrash,
+            style: ButtonStyle.FilledDanger,
+          },
+        ],
+      })
+      .subscribe((event) => {
+        switch (event.type) {
+          case ActionType.Primary:
+            setTimeout(() => {
+              event.continueDialog('Das hat nicht geklappt', LoadingState.Error);
+            }, 500);
+            break;
+        }
+      });
   }
 }

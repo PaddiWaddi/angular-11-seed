@@ -18,6 +18,7 @@ import { LoadingSpinnerComponent } from './components/loading-spinner/loading-sp
 
 import { PrefixDirective } from './directives/prefix.directive';
 import { SuffixDirective } from './directives/suffix.directive';
+import { DialogService } from './components/dialog/dialog.service';
 
 const MODULES: any[] = [OverlayModule, A11yModule];
 
@@ -46,7 +47,7 @@ const DIRECTIVES = [PrefixDirective, SuffixDirective];
 @NgModule({
   declarations: [...COMPONENTS, ...DIRECTIVES],
   imports: [CommonModule, FontAwesomeModule, ...MODULES],
-  providers: [OverlayService],
+  providers: [OverlayService, DialogService],
   exports: [...MODULES, ...COMPONENTS, ...DIRECTIVES],
 })
 export class SharedModule {}

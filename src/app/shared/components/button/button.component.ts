@@ -48,7 +48,7 @@ export class ButtonComponent {
 
   /** Shows a loading indicator */
   @Input()
-  public loadingStatus: LoadingState = LoadingState.Rest;
+  public loadingState?: LoadingState = LoadingState.Rest;
 
   /** Icon Suffix */
   @ContentChild(SuffixDirective)
@@ -94,7 +94,7 @@ export class ButtonComponent {
    * @param status Desired button status
    */
   public setStatus(status: LoadingState): void {
-    this.loadingStatus = status;
+    this.loadingState = status;
     this.cd.markForCheck();
   }
 }

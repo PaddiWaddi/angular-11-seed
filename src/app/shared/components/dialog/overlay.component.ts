@@ -15,6 +15,7 @@ export class OverlayComponent implements OnInit {
   public contentComponent: Type<any> | null = null;
   public contentString: string | null = null;
   public context: any = {};
+  public backdropClose: boolean = true;
 
   constructor(private ref: OverlayData) {}
 
@@ -24,6 +25,7 @@ export class OverlayComponent implements OnInit {
 
   public ngOnInit(): void {
     const content = this.ref.content;
+    this.backdropClose = this.ref.backdropClose;
 
     if (typeof content === 'string') {
       this.contentType = 'string';

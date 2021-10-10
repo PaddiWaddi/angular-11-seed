@@ -1,12 +1,13 @@
 <div class="space-y-m">
-  <h2 class="text-center text-xl font-bold">{{ ref.data.title }}</h2>
-  <p>{{ ref.data.message }}</p>
+  <h2 class="text-center text-xl font-bold">{{ options?.title }}</h2>
+  <p>{{ options?.message }}</p>
 
   <div class="flex space-x-s">
     <button
       class="flex-grow w-0"
+      *ngFor="let action of options?.actions"
       app-button
-      *ngFor="let action of ref.data.actions"
+      [loadingState]="action.state"
       [style]="action.style || ButtonStyle.FilledNeutral"
       (click)="onAction(action)"
     >

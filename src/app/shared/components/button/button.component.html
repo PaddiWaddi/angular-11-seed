@@ -5,9 +5,9 @@
   [class.app-button--style-filled-neutral]="style === ButtonStyle.FilledNeutral"
   [class.app-button--style-filled-danger]="style === ButtonStyle.FilledDanger"
   [class.app-button--style-text-neutral]="style === ButtonStyle.TextNeutral"
-  [class.app-button--loading]="loadingStatus === 'loading'"
-  [class.app-button--loading-error]="loadingStatus === 'error'"
-  [class.app-button--loading-success]="loadingStatus === 'success'"
+  [class.app-button--loading]="loadingState === 'loading'"
+  [class.app-button--loading-error]="loadingState === 'error'"
+  [class.app-button--loading-success]="loadingState === 'success'"
   [attr.disabled]="disabled || null"
 >
   <div *ngIf="prefix" class="app-button__prefix">
