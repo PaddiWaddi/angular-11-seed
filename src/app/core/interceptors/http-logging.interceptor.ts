@@ -39,7 +39,7 @@ export class HttpLoggingInterceptor implements HttpInterceptor {
   /**
    * Called when an http request is created. Attach to the events and log their results.
    */
-  // tslint:disable-next-line: no-any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const startTime = Date.now();
 

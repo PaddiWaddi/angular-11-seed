@@ -45,8 +45,6 @@ export class MessageDialogComponent {
   @HostBinding('@animateHost') animate: boolean = true;
 
   // TEMPLATE REFERENCES
-  /** ButtonStyle to use in template */
-  public ButtonStyle: typeof ButtonStyle = ButtonStyle;
   /** Current Loading state */
   public LoadingState: typeof LoadingState = LoadingState;
   /** Currently activated button */

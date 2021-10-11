@@ -3,45 +3,11 @@ import { ComponentPortal } from '@angular/cdk/portal';
 import { Injectable, Injector, OnInit } from '@angular/core';
 
 import { IconDefinition } from '@fortawesome/fontawesome-common-types';
+import { Observable, Subject } from 'rxjs';
+import { ToastListRef } from './toast-list-ref';
 
 import { ToastListComponent } from './toast-list/toast-list.component';
-
-/**
- * Toast display options
- */
-export interface IToastOptions {
-  /** Toast Type */
-  type: ToastType;
-  /** Message to display */
-  message: string;
-  /** Icon to display that describes the toast */
-  icon?: IconDefinition;
-  /** (Optional) button label if the toast is interactive  */
-  action?: string;
-  /** Display time */
-  duration?: 'short' | 'regular' | 'long' | 'infinite';
-}
-
-/**
- * A toast instance
- */
-export class ToastRef {
-  /**
-   * Creates a new Toast
-   * @param options Options to display
-   */
-  constructor(private options: IToastOptions) {}
-}
-
-/**
- * Type of message a toast is sending
- */
-export enum ToastType {
-  Info,
-  Success,
-  Error,
-  Warning,
-}
+import { IToastOptions, ToastRef } from './toast-ref';
 
 /**
  * Displays popup notifications on top of the ui.
@@ -50,8 +16,11 @@ export enum ToastType {
   providedIn: 'root',
 })
 export class ToastService {
+  /** Toasts array */
+  toasts: ToastRef[] = [];
   /** Array of Toasts */
-  private currentToasts: ToastRef[] = [];
+  private toastListRef: ToastListRef = new ToastListRef(new Subject<ToastRef[]>());
+
   /**
    * Initialize the overlay list
    */
@@ -69,8 +38,27 @@ export class ToastService {
 
     const inj = Injector.create({
       parent: this.injector,
-      providers: [],
+      providers: [{ provide: ToastListRef, useValue: this.toastListRef }],
     });
     overlayRef.attach(new ComponentPortal(ToastListComponent, null, inj));
+  }
+
+  /**
+   * Shows a toast with the given options
+   * @param options display options
+   * @returns ToastRef of the new Toast
+   */
+  public show(options: IToastOptions): ToastRef {
+    const toast = new ToastRef(options);
+    this.toasts.push(toast);
+    this.updateToasts();
+    return toast;
+  }
+
+  /**
+   * Push Toast updates
+   */
+  private updateToasts(): void {
+    this.toastListRef.toasts.next(this.toasts);
   }
 }

@@ -27,13 +27,13 @@ export class Logger {
    * Log to console, only if not in production mode and if using a browser.
    * {@link console.log}
    */
-  // tslint:disable-next-line: no-any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public log(...data: any[]): void {
     if (!this.canLog()) {
       return;
     }
 
-    // tslint:disable-next-line: no-console
+    // eslint-disable-next-line no-console
     console.log(...data);
   }
 
@@ -41,13 +41,13 @@ export class Logger {
    * Warn to console, only if not in production mode and if using a browser.
    * {@link console.warn}
    */
-  // tslint:disable-next-line: no-any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public warn(...data: any[]): void {
     if (!this.canLog()) {
       return;
     }
 
-    // tslint:disable-next-line: no-console
+    // eslint-disable-next-line no-console
     console.warn(...data);
   }
 
@@ -55,13 +55,13 @@ export class Logger {
    * Error to console, only if not in production mode and if using a browser.
    * {@link console.error}
    */
-  // tslint:disable-next-line: no-any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public error(...data: any[]): void {
     if (!this.canLog()) {
       return;
     }
 
-    // tslint:disable-next-line: no-console
+    // eslint-disable-next-line no-console
     console.error(...data);
   }
 
@@ -69,13 +69,13 @@ export class Logger {
    * Table to console if not in production mode and if using a browser.
    * {@link console.table}
    */
-  // tslint:disable-next-line: no-any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public table(tabularData?: any, properties?: string[] | undefined): void {
     if (!this.canLog()) {
       return;
     }
 
-    // tslint:disable-next-line: no-console
+    // eslint-disable-next-line no-console
     console.table(tabularData, properties);
   }
 
@@ -83,13 +83,13 @@ export class Logger {
    * Group console if not in production mode and if using a browser.
    * {@link console.group}
    */
-  // tslint:disable-next-line: no-any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public group(...data: any[]): void {
     if (!this.canLog()) {
       return;
     }
 
-    // tslint:disable-next-line: no-console
+    // eslint-disable-next-line no-console
     console.group(...data);
   }
 
@@ -97,13 +97,13 @@ export class Logger {
    * Group end console if not in production mode and if using a browser.
    * {@link console.groupEnd}
    */
-  // tslint:disable-next-line: no-any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public groupEnd(): void {
     if (!this.canLog()) {
       return;
     }
 
-    // tslint:disable-next-line: no-console
+    // eslint-disable-next-line no-console
     console.groupEnd();
   }
 
@@ -111,26 +111,26 @@ export class Logger {
    * Group collapsed console if not in production mode and if using a browser.
    * {@link console.groupCollapsed}
    */
-  // tslint:disable-next-line: no-any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public groupCollapsed(...data: any[]): void {
     if (!this.canLog()) {
       return;
     }
 
-    // tslint:disable-next-line: no-console
+    // eslint-disable-next-line no-console
     console.groupCollapsed(...data);
   }
 
   /**
    * Opens an alert only if not in production mode and if using a browser.
    */
-  // tslint:disable-next-line: no-any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public alert(message?: any): void {
     if (!this.canLog()) {
       return;
     }
 
-    // tslint:disable-next-line: no-console
+    // eslint-disable-next-line no-console
     alert(message);
   }
 }

@@ -1,1 +1,3 @@
-<p>toast-list works!</p>
+<div class="p-gutter space-y-s max-w-full overflow-hidden">
+  <app-toast [toast]="toast" *ngFor="let toast of toastRef.toasts | async"></app-toast>
+</div>

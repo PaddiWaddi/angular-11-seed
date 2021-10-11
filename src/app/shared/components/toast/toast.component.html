@@ -1,1 +1,10 @@
-<p>toast works!</p>
+<div class="app-toast bg-background-secondary rounded-md shadow-xl overflow-hidden text-label-on-tint">
+  <div class="px-s py-s flex" [class]="{ 'bg-tint-success-3': true }">
+    <button app-button></button>
+
+    <div class="w-l pr-xs">
+      <fa-icon [icon]="toast.options.icon || Icons.faInfoCircle"></fa-icon>
+    </div>
+    {{ toast.options.message }}
+  </div>
+</div>

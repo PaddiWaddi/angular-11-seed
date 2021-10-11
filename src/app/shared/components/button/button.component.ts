@@ -11,17 +11,9 @@ import { SuffixDirective } from '@shared/directives/suffix.directive';
 import { PrefixDirective } from '@shared/directives/prefix.directive';
 import { faIcons, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
-/** Available Button Styles */
-export enum ButtonStyle {
-  /** Primary Button With a solid background */
-  FilledPrimary = 'filled-primary',
-  /** Neutral Button With a solid background */
-  FilledNeutral = 'filled-neutral',
-  /** Danger Button With a solid background */
-  FilledDanger = 'filled-danger',
-  /** Primary interaction color */
-  TextNeutral = 'text-neutral',
-}
+const buttonStyles = ['filled-primary', 'filled-neutral', 'filled-danger', 'text-neutral'] as const;
+
+export type ButtonStyle = typeof buttonStyles[number];
 
 /**
  * Button component
@@ -35,7 +27,7 @@ export enum ButtonStyle {
 export class ButtonComponent {
   /** Button style */
   @Input()
-  public style: ButtonStyle = ButtonStyle.FilledNeutral;
+  public style: ButtonStyle = 'filled-neutral';
 
   /** Button Size */
   @Input()
@@ -81,8 +73,6 @@ export class ButtonComponent {
 
   /** Icon reference to use in template */
   public faIcons: IconDefinition = faIcons;
-  /** ButtonStyle to use in template */
-  public ButtonStyle: typeof ButtonStyle = ButtonStyle;
 
   /**
    * Constructor

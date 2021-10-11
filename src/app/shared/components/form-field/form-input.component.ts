@@ -36,7 +36,7 @@ let uniqueId = 0;
 @Component({
   styleUrls: ['./form-input.component.scss'],
   template: `<ng-content></ng-content>`,
-  // tslint:disable-next-line: component-selector
+  // eslint-disable-next-line @angular-eslint/component-selector
   selector: `
     input[type="text"][appFormInput],
     input[type="password"][appFormInput],

@@ -2,6 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@
 import * as icons from '@fortawesome/free-solid-svg-icons';
 import { ButtonStyle, LoadingState } from '@shared/components/button/button.component';
 import { ActionType, DialogService } from '@shared/components/dialog/dialog.service';
+import { ToastType } from '@shared/components/toast/toast-ref';
 import { ToastService } from '@shared/components/toast/toast.service';
 
 @Component({
@@ -59,5 +60,12 @@ export class DemoComponent implements OnInit {
             break;
         }
       });
+  }
+
+  public addToast() {
+    this.toast.show({
+      type: ToastType.Info,
+      message: 'Yeah',
+    });
   }
 }
