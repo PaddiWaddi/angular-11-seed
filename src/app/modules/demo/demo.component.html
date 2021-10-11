@@ -69,12 +69,14 @@
     <div class="flex justify-end space-x-m">
       <button tabindex="0" [style]="ButtonStyle.TextNeutral" type="submit" app-button>abbrechen</button>
       <button tabindex="0" app-button>abbrechen</button>
-      <button tabindex="0" [style]="ButtonStyle.FilledPrimary" app-button (click)="open()">speichern</button>
+      <button tabindex="0" [style]="ButtonStyle.FilledPrimary" app-button>speichern</button>
     </div>
   </div>
 </div>
 
 <div class="space-y-gutter mt-gutter">
+  <h1 class="text-lg">Alert</h1>
+
   <app-alert>
     <div class="flex justify-between items-center">Test Message <button tabindex="0" app-button>OK</button></div>
   </app-alert>
@@ -90,4 +92,12 @@
   <app-alert [style]="'primary'">
     <div class="flex justify-between items-center">Test Message <button tabindex="0" app-button>OK</button></div>
   </app-alert>
+</div>
+
+<div class="space-y-gutter mt-gutter">
+  <h1 class="text-lg">Overlays</h1>
+  <div class="flex justify-end space-x-m p-xs rounded bg-background-tertiary">
+    <button app-button (click)="open()">dialog</button>
+    <button app-button>toast</button>
+  </div>
 </div>

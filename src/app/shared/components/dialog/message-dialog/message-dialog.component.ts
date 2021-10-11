@@ -15,8 +15,8 @@ import { OverlayData } from '../overlay-ref';
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('animateHost', [
-      transition(':enter', [animate('200ms ease-out')]),
-      transition(':leave', [animate('200ms ease-in')]),
+      transition(':enter', [animate('150ms ease-out')]),
+      transition(':leave', [animate('150ms ease-in')]),
       state(
         'void',
         style({

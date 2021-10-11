@@ -7,6 +7,7 @@ import { HttpLoggingInterceptor } from '@core/interceptors/http-logging.intercep
 import { Logger } from '@core/utility-services/logger.service';
 import { MessageDialogComponent } from '@shared/components/dialog/message-dialog/message-dialog.component';
 import { OverlayComponent } from '@shared/components/dialog/overlay.component';
+import { ToastListComponent } from '@shared/components/toast/toast-list/toast-list.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +19,6 @@ export const httpInterceptorProviders = [{ provide: HTTP_INTERCEPTORS, useClass:
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule],
   bootstrap: [AppComponent],
   providers: [httpInterceptorProviders, Logger],
-  entryComponents: [OverlayComponent, MessageDialogComponent],
+  entryComponents: [OverlayComponent, ToastListComponent],
 })
 export class AppModule {}

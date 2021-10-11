@@ -20,12 +20,16 @@ import { PrefixDirective } from './directives/prefix.directive';
 import { SuffixDirective } from './directives/suffix.directive';
 import { DialogService } from './components/dialog/dialog.service';
 import { CardComponent } from './components/card/card.component';
+import { ToastComponent } from './components/toast/toast.component';
+import { ToastListComponent } from './components/toast/toast-list/toast-list.component';
+import { ToastService } from './components/toast/toast.service';
 
 const MODULES: any[] = [OverlayModule, A11yModule];
 
 const COMPONENTS = [
   AlertComponent,
   ButtonComponent,
+  CardComponent,
   ErrorComponent,
   FormFieldComponent,
   FormInputComponent,
@@ -41,14 +45,18 @@ const COMPONENTS = [
   // SegmentedControlComponent,
   // TextComponent,
   // TitleComponent,
+  ToastComponent,
+  ToastListComponent,
 ];
+
+const SERVICES = [OverlayService, DialogService, ToastService];
 
 const DIRECTIVES = [PrefixDirective, SuffixDirective];
 
 @NgModule({
-  declarations: [...COMPONENTS, ...DIRECTIVES, CardComponent],
+  declarations: [...COMPONENTS, ...DIRECTIVES],
   imports: [CommonModule, FontAwesomeModule, ...MODULES],
-  providers: [OverlayService, DialogService],
+  providers: [SERVICES],
   exports: [...MODULES, ...COMPONENTS, ...DIRECTIVES],
 })
 export class SharedModule {}
