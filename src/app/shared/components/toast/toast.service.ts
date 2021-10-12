@@ -6,7 +6,7 @@ import { IconDefinition } from '@fortawesome/fontawesome-common-types';
 import { Observable, Subject } from 'rxjs';
 import { ToastListRef } from './toast-list-ref';
 
-import { ToastListComponent } from './toast-list/toast-list.component';
+import { ToastListComponent } from './toast-list.component';
 import { IToastOptions, ToastRef } from './toast-ref';
 
 /**
@@ -59,6 +59,12 @@ export class ToastService {
    * Push Toast updates
    */
   private updateToasts(): void {
+    this.toastListRef.toasts.next(this.toasts);
+  }
+
+  private dismissToast(toast: ToastRef): void {
+    this.toasts.slice(this.toasts.indexOf(toast), 1);
+
     this.toastListRef.toasts.next(this.toasts);
   }
 }

@@ -1,4 +1,5 @@
 import { IconDefinition } from '@fortawesome/fontawesome-common-types';
+import { timer } from 'rxjs';
 
 /**
  * Toast display options
@@ -30,9 +31,4 @@ export class ToastRef {
 /**
  * Type of message a toast is sending
  */
-export enum ToastType {
-  Info,
-  Success,
-  Error,
-  Warning,
-}
+export type ToastType = 'info' | 'success' | 'error' | 'warning';

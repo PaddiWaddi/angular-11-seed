@@ -5,6 +5,9 @@
   [class.app-button--style-filled-neutral]="style === 'filled-neutral'"
   [class.app-button--style-filled-danger]="style === 'filled-danger'"
   [class.app-button--style-text-neutral]="style === 'text-neutral'"
+  [class.app-button--size-s]="size === 's'"
+  [class.app-button--size-m]="size === 'm'"
+  [class.app-button--size-l]="size === 'l'"
   [class.app-button--loading]="loadingState === 'loading'"
   [class.app-button--loading-error]="loadingState === 'error'"
   [class.app-button--loading-success]="loadingState === 'success'"
@@ -18,7 +21,7 @@
     <app-loading-spinner
       class="app-button__loading-spinner"
       [color]="
-        style == 'filled-danger' || style == 'filled-primary' || style == 'filled-neutral' ? 'on-tint' : 'regular'
+        style === 'filled-danger' || style === 'filled-primary' || style === 'filled-neutral' ? 'on-tint' : 'regular'
       "
     ></app-loading-spinner>
   </div>

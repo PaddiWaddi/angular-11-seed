@@ -14,6 +14,10 @@
   $styleFilledDanger: #{&}--style-filled-danger;
   $styleTextNeutral: #{&}--style-text-primary;
 
+  $sizeS: #{&}--size-s;
+  $sizeM: #{&}--size-m;
+  $sizeL: #{&}--size-l;
+
   $focused: #{&}--focused;
   $loading: #{&}--loading;
   $loadingError: #{&}--loading-error;
@@ -35,6 +39,18 @@
 
   &#{$focused} {
     @apply ring-4;
+  }
+
+  &#{$sizeS} {
+    @apply px-xxs py-xxs text-sm;
+  }
+
+  &#{$sizeM} {
+    @apply px-sm py-xs;
+  }
+
+  &#{$sizeL} {
+    @apply px-m py-sm text-lg;
   }
 
   /* FILLED STYLE */

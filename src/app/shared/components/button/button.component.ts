@@ -11,14 +11,23 @@ import { SuffixDirective } from '@shared/directives/suffix.directive';
 import { PrefixDirective } from '@shared/directives/prefix.directive';
 import { faIcons, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
+/** Available button styles */
 const buttonStyles = ['filled-primary', 'filled-neutral', 'filled-danger', 'text-neutral'] as const;
 
+/** Button styles */
 export type ButtonStyle = typeof buttonStyles[number];
+
+/** Button Status type */
+const loadingState = ['rest', 'loading', 'error', 'success'] as const;
+
+/** Button Status type */
+export type LoadingState = typeof loadingState[number];
 
 /**
  * Button component
  */
 @Component({
+  // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'button[app-button],a[app-button]',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
@@ -40,7 +49,7 @@ export class ButtonComponent {
 
   /** Shows a loading indicator */
   @Input()
-  public loadingState?: LoadingState = LoadingState.Rest;
+  public loadingState?: LoadingState = 'rest';
 
   /** Icon Suffix */
   @ContentChild(SuffixDirective)
@@ -87,12 +96,4 @@ export class ButtonComponent {
     this.loadingState = status;
     this.cd.markForCheck();
   }
-}
-
-/** Button Status type */
-export enum LoadingState {
-  Rest = 'rest',
-  Loading = 'loading',
-  Error = 'error',
-  Success = 'success',
 }

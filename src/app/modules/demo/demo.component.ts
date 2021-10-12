@@ -1,8 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import * as icons from '@fortawesome/free-solid-svg-icons';
-import { ButtonStyle, LoadingState } from '@shared/components/button/button.component';
-import { ActionType, DialogService } from '@shared/components/dialog/dialog.service';
-import { ToastType } from '@shared/components/toast/toast-ref';
+import { LoadingState } from '@shared/components/button/button.component';
+import { DialogService } from '@shared/components/dialog/dialog.service';
 import { ToastService } from '@shared/components/toast/toast.service';
 
 @Component({
@@ -11,24 +10,18 @@ import { ToastService } from '@shared/components/toast/toast.service';
   styleUrls: ['./demo.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DemoComponent implements OnInit {
+export class DemoComponent {
   public icons: typeof icons = icons;
 
-  public loadingState: LoadingState = LoadingState.Loading;
-
-  // TEMPLATE REFERENCES
-  /** ButtonStyle to use in template */
-  public ButtonStyle: typeof ButtonStyle = ButtonStyle;
+  public loadingState: LoadingState = 'loading';
 
   constructor(private cdRef: ChangeDetectorRef, private dialogService: DialogService, private toast: ToastService) {}
 
-  ngOnInit(): void {}
-
   public buttonClick(): void {
-    this.loadingState = LoadingState.Loading;
+    this.loadingState = 'loading';
 
     setTimeout(() => {
-      this.loadingState = LoadingState.Error;
+      this.loadingState = 'error';
       this.cdRef.markForCheck();
     }, 5000);
   }
@@ -41,21 +34,21 @@ export class DemoComponent implements OnInit {
         actions: [
           {
             content: 'abbrechen',
-            type: ActionType.Cancel,
+            type: 'cancel',
           },
           {
             content: 'löschen',
-            type: ActionType.Primary,
+            type: 'primary',
             icon: this.icons.faTrash,
-            style: ButtonStyle.FilledDanger,
+            style: 'filled-danger',
           },
         ],
       })
       .subscribe((event) => {
         switch (event.type) {
-          case ActionType.Primary:
+          case 'primary':
             setTimeout(() => {
-              event.continueDialog('Das hat nicht geklappt', LoadingState.Error);
+              event.continueDialog('Das hat nicht geklappt', 'error');
             }, 500);
             break;
         }
@@ -64,7 +57,7 @@ export class DemoComponent implements OnInit {
 
   public addToast() {
     this.toast.show({
-      type: ToastType.Info,
+      type: 'info',
       message: 'Yeah',
     });
   }

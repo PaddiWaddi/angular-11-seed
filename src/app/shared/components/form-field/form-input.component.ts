@@ -20,13 +20,7 @@ import { UnsubscribeDirective } from '@core/helpers/unsubscribe.directive';
 /**
  * The different types of input state changes
  */
-export enum INPUT_STATE_CHANGE {
-  blur = 'BLUR',
-  focus = 'FOCUS',
-  change = 'CHANGE',
-  valueChange = 'VALUE_CHANGE',
-  init = 'INIT',
-}
+export type INPUT_STATE_CHANGE = 'BLUR' | 'FOCUS' | 'CHANGE' | 'VALUE_CHANGE' | 'INIT';
 
 let uniqueId = 0;
 
@@ -87,7 +81,7 @@ export class FormInputComponent extends UnsubscribeDirective implements OnChange
   @HostListener('blur')
   public onBlur(): void {
     this.focused = false;
-    this.stateChanges.next(INPUT_STATE_CHANGE.blur);
+    this.stateChanges.next('BLUR');
   }
 
   /**
@@ -96,7 +90,7 @@ export class FormInputComponent extends UnsubscribeDirective implements OnChange
   @HostListener('focus')
   public onFocus(): void {
     this.focused = true;
-    this.stateChanges.next(INPUT_STATE_CHANGE.focus);
+    this.stateChanges.next('FOCUS');
   }
 
   /**
@@ -116,10 +110,10 @@ export class FormInputComponent extends UnsubscribeDirective implements OnChange
 
     // Every value change is emitted
     this.ngControl.valueChanges.pipe(takeUntil(this.ngUnsubscribe)).subscribe(() => {
-      this.stateChanges.next(INPUT_STATE_CHANGE.valueChange);
+      this.stateChanges.next('VALUE_CHANGE');
     });
 
-    this.stateChanges.next(INPUT_STATE_CHANGE.init);
+    this.stateChanges.next('INIT');
   }
 
   /**
@@ -127,7 +121,7 @@ export class FormInputComponent extends UnsubscribeDirective implements OnChange
    */
   public ngOnChanges(changes?: SimpleChanges): void {
     if (changes) {
-      this.stateChanges.next(INPUT_STATE_CHANGE.change);
+      this.stateChanges.next('CHANGE');
     }
   }
 }

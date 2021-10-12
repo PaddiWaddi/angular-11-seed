@@ -1,8 +1,8 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding } from '@angular/core';
-import { ButtonStyle, LoadingState } from '@shared/components/button/button.component';
+import { LoadingState } from '@shared/components/button/button.component';
 import { Subject } from 'rxjs';
-import { ActionType, DialogEvent, IDialogAction, IDialogOptions, IDialogData } from '../dialog.service';
+import { DialogEvent, IDialogAction, IDialogOptions, IDialogData } from '../dialog.service';
 import { OverlayData } from '../overlay-ref';
 
 /**
@@ -45,8 +45,6 @@ export class MessageDialogComponent {
   @HostBinding('@animateHost') animate: boolean = true;
 
   // TEMPLATE REFERENCES
-  /** Current Loading state */
-  public LoadingState: typeof LoadingState = LoadingState;
   /** Currently activated button */
   public activatedAction: IDialogAction | null = null;
 
@@ -65,7 +63,7 @@ export class MessageDialogComponent {
       return;
     }
     this.activatedAction = action;
-    action.state = LoadingState.Loading;
+    action.state = 'loading';
 
     this.cdRef.markForCheck();
 
@@ -73,7 +71,7 @@ export class MessageDialogComponent {
       new DialogEvent(action.type, { ...action }, this.continueDialog.bind(this), this.dismissDialog.bind(this))
     );
 
-    if (action.type === ActionType.Cancel) {
+    if (action.type === 'cancel') {
       this.ref.close(null);
       return;
     }
@@ -84,7 +82,7 @@ export class MessageDialogComponent {
    * @param message message to display, e.g. error
    * @param state button state to show
    */
-  public continueDialog(message?: string, state?: LoadingState.Rest | LoadingState.Error | LoadingState.Success): void {
+  public continueDialog(message?: string, state?: LoadingState): void {
     this.activatedAction!.state = state;
     this.activatedAction = null;
     this.cdRef.markForCheck();

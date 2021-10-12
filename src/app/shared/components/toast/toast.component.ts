@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
 import * as Icons from '@fortawesome/free-solid-svg-icons';
 
 import { ToastRef } from './toast-ref';
@@ -12,14 +12,19 @@ import { ToastRef } from './toast-ref';
   styleUrls: ['./toast.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ToastComponent implements OnInit {
+export class ToastComponent {
   @Input()
   public toast!: ToastRef;
+
+  @Output()
+  public dismiss: EventEmitter<null> = new EventEmitter();
 
   /** Icons to use in template */
   public Icons: typeof Icons = Icons;
 
   constructor() {}
 
-  ngOnInit(): void {}
+  public onClose(): void {
+    this.dismiss.emit();
+  }
 }

@@ -1,8 +1,10 @@
 <div class="app-toast bg-background-secondary rounded-md shadow-xl overflow-hidden text-label-on-tint">
-  <div class="px-s py-s flex" [class]="{ 'bg-tint-success-3': true }">
-    <button app-button></button>
+  <div class="px-sm py-s flex relative" [class]="{ 'bg-tint-success-3': true }">
+    <button class="absolute top-0 right-0 w-m" app-button [style]="'text-neutral'" [size]="'s'" (click)="onClose()">
+      <fa-icon [icon]="Icons.faTimes"></fa-icon>
+    </button>
 
-    <div class="w-l pr-xs">
+    <div class="w-l pr-xxs">
       <fa-icon [icon]="toast.options.icon || Icons.faInfoCircle"></fa-icon>
     </div>
     {{ toast.options.message }}

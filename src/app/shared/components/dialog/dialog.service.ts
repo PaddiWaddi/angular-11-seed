@@ -34,18 +34,9 @@ export interface IDialogAction {
 /**
  * Types of a dialog action
  */
-export enum ActionType {
-  /** Cancels the action and closes the dialog synchronously */
-  Cancel,
-  /** Primary async action */
-  Primary,
-  /** Secondary async action */
-  Secondary,
-  /** Tertiary async action */
-  Tertiary,
-  /** Quaternary async action */
-  Quaternary,
-}
+const actionTypes = ['cancel', 'primary', 'secondary', 'tertiary', 'quaternary'] as const;
+
+export type ActionType = typeof actionTypes[number];
 
 /**
  * Data to initialize a dialog
@@ -71,10 +62,7 @@ export class DialogEvent {
   constructor(
     public readonly type: ActionType,
     public readonly action: IDialogAction,
-    public readonly continueDialog: (
-      message?: string,
-      state?: LoadingState.Rest | LoadingState.Error | LoadingState.Success
-    ) => void,
+    public readonly continueDialog: (message?: string, state?: LoadingState) => void,
     public readonly dismissDialog: () => void
   ) {}
 }

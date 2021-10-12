@@ -21,7 +21,7 @@ import { SuffixDirective } from './directives/suffix.directive';
 import { DialogService } from './components/dialog/dialog.service';
 import { CardComponent } from './components/card/card.component';
 import { ToastComponent } from './components/toast/toast.component';
-import { ToastListComponent } from './components/toast/toast-list/toast-list.component';
+import { ToastListComponent } from './components/toast/toast-list.component';
 import { ToastService } from './components/toast/toast.service';
 
 const MODULES: any[] = [OverlayModule, A11yModule];

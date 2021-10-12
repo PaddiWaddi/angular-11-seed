@@ -1,11 +1,9 @@
 <div class="space-y-s md:w-1/2">
   <h1 class="text-lg">Buttons</h1>
   <div class="space-x-gutter p-l rounded-lg bg-background-tertiary flex">
-    <button app-button [style]="ButtonStyle.TextNeutral">Text</button>
-    <button app-button [style]="ButtonStyle.TextNeutral" [loadingState]="loadingState" (click)="buttonClick()">
-      Loading
-    </button>
-    <button app-button [style]="ButtonStyle.TextNeutral" [disabled]="true">disabled</button>
+    <button app-button [style]="'text-neutral'">Text</button>
+    <button app-button [style]="'text-neutral'" [loadingState]="loadingState" (click)="buttonClick()">Loading</button>
+    <button app-button [style]="'text-neutral'" [disabled]="true">disabled</button>
   </div>
 
   <div class="space-x-gutter p-l rounded-lg bg-background-tertiary flex">
@@ -20,21 +18,15 @@
   </div>
 
   <div class="space-x-gutter p-l rounded-lg bg-background-tertiary flex">
-    <button app-button [style]="ButtonStyle.FilledPrimary">Primary</button>
-    <button app-button [style]="ButtonStyle.FilledPrimary" [loadingState]="loadingState" (click)="buttonClick()">
-      Loading
-    </button>
-    <button app-button [style]="ButtonStyle.FilledPrimary" [disabled]="true">disabled</button>
+    <button app-button [style]="'filled-primary'">Primary</button>
+    <button app-button [style]="'filled-primary'" [loadingState]="loadingState" (click)="buttonClick()">Loading</button>
+    <button app-button [style]="'filled-primary'" [disabled]="true">disabled</button>
   </div>
 
   <div class="space-x-gutter p-l rounded-lg bg-background-tertiary flex">
-    <button app-button [style]="ButtonStyle.FilledDanger">
-      Danger <fa-icon appSuffix [icon]="icons.faTrash"></fa-icon>
-    </button>
-    <button app-button [style]="ButtonStyle.FilledDanger" [loadingState]="loadingState" (click)="buttonClick()">
-      Loading
-    </button>
-    <button app-button [style]="ButtonStyle.FilledDanger" [disabled]="true">disabled</button>
+    <button app-button [style]="'filled-danger'">Danger <fa-icon appSuffix [icon]="icons.faTrash"></fa-icon></button>
+    <button app-button [style]="'filled-danger'" [loadingState]="loadingState" (click)="buttonClick()">Loading</button>
+    <button app-button [style]="'filled-danger'" [disabled]="true">disabled</button>
   </div>
 </div>
 
@@ -67,9 +59,9 @@
       </app-form-field>
     </div>
     <div class="flex justify-end space-x-m">
-      <button tabindex="0" [style]="ButtonStyle.TextNeutral" type="submit" app-button>abbrechen</button>
+      <button tabindex="0" [style]="'text-neutral'" type="submit" app-button>abbrechen</button>
       <button tabindex="0" app-button>abbrechen</button>
-      <button tabindex="0" [style]="ButtonStyle.FilledPrimary" app-button>speichern</button>
+      <button tabindex="0" [style]="'filled-primary'" app-button>speichern</button>
     </div>
   </div>
 </div>

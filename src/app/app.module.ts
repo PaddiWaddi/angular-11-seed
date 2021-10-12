@@ -5,9 +5,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HttpLoggingInterceptor } from '@core/interceptors/http-logging.interceptor';
 import { Logger } from '@core/utility-services/logger.service';
-import { MessageDialogComponent } from '@shared/components/dialog/message-dialog/message-dialog.component';
 import { OverlayComponent } from '@shared/components/dialog/overlay.component';
-import { ToastListComponent } from '@shared/components/toast/toast-list/toast-list.component';
+import { ToastListComponent } from '@shared/components/toast/toast-list.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';

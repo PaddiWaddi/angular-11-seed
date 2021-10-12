@@ -8,7 +8,7 @@
       *ngFor="let action of options?.actions"
       app-button
       [loadingState]="action.state"
-      [style]="action.style || ButtonStyle.FilledNeutral"
+      [style]="action.style || 'filled-neutral'"
       (click)="onAction(action)"
     >
       <fa-icon [icon]="action.icon" *ngIf="action.icon"></fa-icon>

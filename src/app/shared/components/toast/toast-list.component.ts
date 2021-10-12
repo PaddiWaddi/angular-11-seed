@@ -1,7 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { UnsubscribeDirective } from '@core/helpers/unsubscribe.directive';
-import { takeUntil } from 'rxjs/operators';
-import { ToastListRef } from '../toast-list-ref';
+import { ToastListRef } from './toast-list-ref';
 
 @Component({
   selector: 'app-toast-list',
@@ -9,10 +8,8 @@ import { ToastListRef } from '../toast-list-ref';
   styleUrls: ['./toast-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ToastListComponent extends UnsubscribeDirective implements OnInit {
+export class ToastListComponent extends UnsubscribeDirective {
   constructor(public toastRef: ToastListRef) {
     super();
   }
-
-  ngOnInit(): void {}
 }
